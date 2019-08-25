@@ -1,2 +1,2 @@
 # onion-architecture
-An example of Spring Boot monolith application in the Onion Architecture.
+An example of Spring Boot monolith application with using Onion Architecture. Includes backend only.
