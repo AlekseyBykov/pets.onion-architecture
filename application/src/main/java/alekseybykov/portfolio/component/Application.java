@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 /**
  * @author  aleksey.n.bykov@gmail.com
  * @version 1.0
- * @since   2019-08-09
+ * @since   2019-09-08
  */
 @SpringBootApplication(scanBasePackages = {"alekseybykov.portfolio.component"})
 @EntityScan(basePackages = {"alekseybykov.portfolio.component.entities"})

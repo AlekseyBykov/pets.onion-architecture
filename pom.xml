@@ -128,7 +128,7 @@
                         </executions>
                         <configuration>
                             <url>jdbc:postgresql://localhost:5432/whitepappers</url>
-                            <user>sa</user>
+                            <user>postgres</user>
                             <password>root</password>
                             <outOfOrder>true</outOfOrder>
                             <locations>
