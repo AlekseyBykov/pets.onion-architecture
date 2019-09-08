@@ -127,7 +127,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <url>jdbc:sqlserver://localhost:50435;databaseName=onion-architecture-local</url>
+                            <url>jdbc:postgresql://localhost:5432/white-pappers</url>
                             <user>sa</user>
                             <password>root</password>
                             <outOfOrder>true</outOfOrder>
