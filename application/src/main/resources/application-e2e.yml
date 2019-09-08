@@ -1,0 +1,34 @@
+spring:
+  jpa:
+    database: postgresql
+    open-in-view: true
+    generate-ddl: false
+    properties:
+      hibernate:
+        default_schema: whitepappers_test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/whitepappers
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: root
+    hikari:
+      maximumPoolSize: 10
+
+  flyway:
+    schemas: whitepappers_test
+    locations: classpath:/db/migration, classpath:/db/e2e
+    out-of-order: true
+
+schema:
+  recreate: true
+
+auth:
+  enabled: false
+
+jobs:
+  enabled: false
+
+fileservice:
+  storage:
+    local:
+      path: whitepappers_test_files
