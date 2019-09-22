@@ -1,3 +1,6 @@
+//
+// Feel free to use these solutions in your work.
+//
 package alekseybykov.portfolio.component.e2e;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,3 +1,6 @@
+//
+// Feel free to use these solutions in your work.
+//
 package alekseybykov.portfolio.component.services.whitepapper;
 
 import alekseybykov.portfolio.component.entities.WhitePapper;
