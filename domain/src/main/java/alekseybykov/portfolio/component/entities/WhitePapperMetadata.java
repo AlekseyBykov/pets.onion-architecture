@@ -3,10 +3,8 @@
 //
 package alekseybykov.portfolio.component.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import alekseybykov.portfolio.component.listeners.AuditListener;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -20,8 +18,11 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = {"audit"})
+@ToString(exclude = {"audit"})
 @Table(name = "white_papper_metadata")
-public class WhitePapperMetadata {
+@EntityListeners(AuditListener.class)
+public class WhitePapperMetadata implements Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -39,4 +40,7 @@ public class WhitePapperMetadata {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "white_papper_id")
     private WhitePapper whitePapper;
+
+    @Embedded
+    private Audit audit;
 }

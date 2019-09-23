@@ -10,6 +10,8 @@ package alekseybykov.portfolio.component.entities;
  */
 public interface Auditable {
 
+    Long getId();
+
     Audit getAudit();
 
     void setAudit(Audit audit);
