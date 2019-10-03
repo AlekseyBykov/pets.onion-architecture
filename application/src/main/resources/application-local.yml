@@ -5,23 +5,20 @@ spring:
     generate-ddl: false
     properties:
       hibernate:
-        default_schema: whitepappers_test
+        default_schema: whitepappers
   datasource:
     url: jdbc:postgresql://localhost:5432/whitepappers
     driverClassName: org.postgresql.Driver
     username: postgres
     password: root
     hikari:
-      maximumPoolSize: 10
-      schema: whitepappers_test
+      maximumPoolSize: 80
+      schema: whitepappers
 
   flyway:
-    schemas: whitepappers_test
-    locations: classpath:/db/migration, classpath:/db/e2e
+    schemas: whitepappers
+    locations: classpath:/db/migration, classpath:/db/local
     out-of-order: true
-
-schema:
-  recreate: true
 
 auth:
   enabled: false
@@ -30,9 +27,8 @@ jobs:
   enabled: false
 
 audit:
-  enabled: false
+  enabled: true
 
-fileservice:
-  storage:
-    local:
-      path: whitepappers_test_files
+fluentd:
+  host: localhost
+  port: 24224
