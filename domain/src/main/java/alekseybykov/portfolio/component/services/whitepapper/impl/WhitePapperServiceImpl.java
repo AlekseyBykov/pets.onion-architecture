@@ -3,6 +3,7 @@
 //
 package alekseybykov.portfolio.component.services.whitepapper.impl;
 
+import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
 import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
@@ -12,7 +13,12 @@ import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataVa
 import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.List;
@@ -52,12 +58,21 @@ public class WhitePapperServiceImpl implements WhitePapperService {
     }
 
     @Override
-    public List<WhitePapper> findAll() {
-        return whitePapperRegistry.findAll();
+    @Transactional(readOnly = true)
+    public Page<WhitePapper> findAllWhitepappers(Integer page, Integer size) {
+        Pageable pageable = PageRequest.of(page, size, new Sort(Sort.Direction.DESC, Audit.DATE_CREATE));
+        return whitePapperRegistry.findAllWhitepappers(pageable);
     }
 
     @Override
     public void deleteByIds(List<Long> ids) {
         whitePapperRegistry.deleteByIds(ids);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public WhitePapper createWhitePapper(WhitePapper whitePapper) {
+        WhitePapper saved = whitePapperRegistry.save(whitePapper);
+        return saved;
     }
 }

@@ -5,6 +5,8 @@ package alekseybykov.portfolio.component.repositories;
 
 import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.registries.WhitePapperRegistry;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -20,6 +22,11 @@ import java.util.Collection;
  */
 @Repository
 public interface WhitePapperRepository extends WhitePapperRegistry, JpaRepository<WhitePapper, Long> {
+
+    @Override
+    @Query(value = "select w from WhitePapper w ", countQuery = "select count(w) from WhitePapper w ")
+    Page<WhitePapper> findAllWhitepappers(Pageable pageable);
+
     @Override
     @Modifying
     @Query(value = "delete " +

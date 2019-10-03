@@ -3,11 +3,10 @@
 //
 package alekseybykov.portfolio.component.controllers;
 
-import alekseybykov.portfolio.component.dto.FileUploadDto;
-import alekseybykov.portfolio.component.dto.IdsDto;
-import alekseybykov.portfolio.component.dto.ScopeDto;
-import alekseybykov.portfolio.component.dto.WhitePapperMetadataDto;
+import alekseybykov.portfolio.component.dto.*;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
+import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.mappings.ScreenDocumentMapper;
 import alekseybykov.portfolio.component.mappings.WhitePapperMapper;
 import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
 import alekseybykov.portfolio.component.utils.FileValidator;
@@ -16,6 +15,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +38,7 @@ public class WhitePapperController {
     private final WhitePapperService whitePapperService;
     private final WhitePapperMapper whitePapperMapper;
     private final FileValidator fileValidator;
+    private final ScreenDocumentMapper screenDocumentMapper;
 
     @ApiOperation(value = "Upload file with metadata")
     @PostMapping("/upload")
@@ -72,17 +74,19 @@ public class WhitePapperController {
         return ResponseEntity.ok(FileUploadDto.builder().id(id).build());
     }
 
+    @ApiOperation(value = "Get all whitepappers [e.g, for displaying in screen, in table view]")
+    @GetMapping()
+    public Page<ScreenDocumentDto> getAllDocumentsForScreen(
+            @ApiParam("Size of page starting from 0") @RequestParam(value = "page") final Integer page,
+            @ApiParam("Page size") @RequestParam(value = "size") final Integer size) {
+        Page<WhitePapper> data = whitePapperService.findAllWhitepappers(page, size);
+        return new PageImpl<>(screenDocumentMapper.toListDto(data.getContent()),
+                data.getPageable(), data.getTotalElements());
+    }
+
     @PostMapping()
     @ApiOperation(value = "Deleting white pappers by dentifiers")
     public void deleteByIds(@ApiParam("list of white pappers") @RequestBody IdsDto idsDto) {
         whitePapperService.deleteByIds(idsDto.getIds());
     }
-
-    // todo temporary removed
-    /*@GetMapping("/all")
-    @ApiOperation(value = "Getting all the white pappers in the system")
-    public List<WhitepapperItemDto> findAll() {
-        List<WhitePapper> data = whitePapperService.findAll();
-        return whitePapperMapper.toListDto(data);
-    }*/
 }

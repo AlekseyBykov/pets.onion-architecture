@@ -7,6 +7,7 @@ import alekseybykov.portfolio.component.entities.FileTransferObject;
 import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
 import lombok.NonNull;
+import org.springframework.data.domain.Page;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +22,9 @@ public interface WhitePapperService {
     Long upload(@NonNull FileTransferObject fileTransferObject,
                 @NonNull WhitePapperMetadata whitePapperMetadata) throws IOException;
 
-    List<WhitePapper> findAll();
+    Page<WhitePapper> findAllWhitepappers(Integer page, Integer size);
 
     void deleteByIds(List<Long> ids);
+
+    WhitePapper createWhitePapper(WhitePapper whitePapper);
 }

@@ -4,9 +4,10 @@
 package alekseybykov.portfolio.component.registries;
 
 import alekseybykov.portfolio.component.entities.WhitePapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -17,7 +18,7 @@ public interface WhitePapperRegistry {
 
     WhitePapper save(WhitePapper whitePapper);
 
-    List<WhitePapper> findAll();
+    Page<WhitePapper> findAllWhitepappers(Pageable pageable);
 
     void deleteByIds(Collection<Long> ids);
 }
