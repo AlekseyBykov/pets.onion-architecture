@@ -8,6 +8,7 @@ import alekseybykov.portfolio.component.entities.FileTransferObject;
 import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.mappings.ScreenDocumentMapper;
 import alekseybykov.portfolio.component.mappings.WhitePapperMapper;
+import alekseybykov.portfolio.component.services.metadata.WhitepapperMetadataService;
 import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
 import alekseybykov.portfolio.component.utils.FileValidator;
 import io.swagger.annotations.Api;
@@ -37,6 +38,7 @@ public class WhitePapperController {
 
     private final WhitePapperService whitePapperService;
     private final WhitePapperMapper whitePapperMapper;
+    private final WhitepapperMetadataService whitepapperMetadataService;
     private final FileValidator fileValidator;
     private final ScreenDocumentMapper screenDocumentMapper;
 
@@ -91,6 +93,14 @@ public class WhitePapperController {
         WhitePapper whitePapper = whitePapperService.getById(id);
         ScreenDocumentDto screenDocumentDto = screenDocumentMapper.toDto(whitePapper);
         return ResponseEntity.ok(screenDocumentDto);
+    }
+
+    @ApiOperation(value = "Update whitepapper's metadata by identifier [e.g, data is submited from edit view]")
+    @PutMapping("/update-metadata")
+    public ResponseEntity<Long> updateMetadata(
+            @ApiParam("Identifier of the whitepapper") @RequestParam("id") Long id,
+            @ApiParam("Updated metadata") @RequestBody WhitePapperMetadataDto dto) {
+        return ResponseEntity.ok(whitepapperMetadataService.save(whitePapperMapper.toEntity(dto), id).getId());
     }
 
     @PostMapping()
