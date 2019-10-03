@@ -3,10 +3,10 @@
 //
 package alekseybykov.portfolio.component.entities;
 
-import alekseybykov.portfolio.component.listeners.AuditListener;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -21,7 +21,7 @@ import javax.persistence.*;
 @EqualsAndHashCode(exclude = {"audit"})
 @ToString(exclude = {"audit"})
 @Table(name = "white_papper_metadata")
-@EntityListeners(AuditListener.class)
+//@EntityListeners(AuditListener.class)
 public class WhitePapperMetadata implements Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +37,16 @@ public class WhitePapperMetadata implements Auditable {
     @Column(name = "registration_number")
     private String registrationNumber;
 
+    @Column(name = "registration_date")
+    private LocalDate registrationDate;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "white_papper_id")
     private WhitePapper whitePapper;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "scope_id", referencedColumnName = "id")
+    private Scope scope;
 
     @Embedded
     private Audit audit;

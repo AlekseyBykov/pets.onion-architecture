@@ -3,7 +3,6 @@
 //
 package alekseybykov.portfolio.component.entities;
 
-import alekseybykov.portfolio.component.listeners.AuditListener;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,9 +20,8 @@ import javax.persistence.*;
 @EqualsAndHashCode(exclude = {"audit", "whitePapperMetadata"})
 @ToString(exclude = {"audit", "whitePapperMetadata"})
 @Table(name = "white_papper")
-@EntityListeners(AuditListener.class)
+//@EntityListeners(AuditListener.class)
 public class WhitePapper implements Auditable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

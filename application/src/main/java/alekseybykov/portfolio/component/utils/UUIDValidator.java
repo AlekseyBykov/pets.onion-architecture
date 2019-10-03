@@ -1,7 +1,7 @@
 //
 // Feel free to use these solutions in your work.
 //
-package alekseybykov.portfolio.component;
+package alekseybykov.portfolio.component.utils;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

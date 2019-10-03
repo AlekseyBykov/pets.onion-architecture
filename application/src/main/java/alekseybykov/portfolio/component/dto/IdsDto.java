@@ -5,10 +5,7 @@ package alekseybykov.portfolio.component.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -25,5 +22,6 @@ import java.util.List;
 public class IdsDto {
 
     @ApiModelProperty("Identifier's list")
+    @Singular
     private List<Long> ids;
 }

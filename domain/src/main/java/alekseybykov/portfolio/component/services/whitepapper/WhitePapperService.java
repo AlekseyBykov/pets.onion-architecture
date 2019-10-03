@@ -3,8 +3,12 @@
 //
 package alekseybykov.portfolio.component.services.whitepapper;
 
+import alekseybykov.portfolio.component.entities.FileTransferObject;
 import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import lombok.NonNull;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -13,6 +17,9 @@ import java.util.List;
  * @since   2019-09-08
  */
 public interface WhitePapperService {
+
+    Long upload(@NonNull FileTransferObject fileTransferObject,
+                @NonNull WhitePapperMetadata whitePapperMetadata) throws IOException;
 
     List<WhitePapper> findAll();
 

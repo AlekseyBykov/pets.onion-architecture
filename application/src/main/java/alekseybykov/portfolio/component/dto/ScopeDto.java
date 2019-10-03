@@ -10,26 +10,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.ZonedDateTime;
-
 /**
  * @author  aleksey.n.bykov@gmail.com
  * @version 1.0
- * @since   2019-09-08
+ * @since   2019-10-03
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel(value = "WhitePapperDto: DTO for exchange with a client")
-public class WhitePapperDto {
+@ApiModel(value = "ScopeDto: some scope of whitepapper")
+public class ScopeDto {
 
-    @ApiModelProperty("WhitePapper id")
+    @ApiModelProperty("identifier of scope")
     private Long id;
 
-    @ApiModelProperty("WhitePapper name")
+    @ApiModelProperty("name of scope")
     private String name;
-
-    @ApiModelProperty("WhitePapper creation date")
-    private ZonedDateTime dateCreate;
 }

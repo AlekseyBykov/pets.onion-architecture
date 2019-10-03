@@ -3,12 +3,12 @@
 //
 package alekseybykov.portfolio.component.audit.impl;
 
-import alekseybykov.portfolio.component.UUIDValidator;
 import alekseybykov.portfolio.component.audit.Auditor;
 import alekseybykov.portfolio.component.audit.helper.AuditHelper;
 import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.Auditable;
 import alekseybykov.portfolio.component.entities.User;
+import alekseybykov.portfolio.component.utils.UUIDValidator;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;

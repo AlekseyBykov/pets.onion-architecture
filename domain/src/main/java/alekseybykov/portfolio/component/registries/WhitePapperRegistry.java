@@ -15,6 +15,8 @@ import java.util.List;
  */
 public interface WhitePapperRegistry {
 
+    WhitePapper save(WhitePapper whitePapper);
+
     List<WhitePapper> findAll();
 
     void deleteByIds(Collection<Long> ids);
