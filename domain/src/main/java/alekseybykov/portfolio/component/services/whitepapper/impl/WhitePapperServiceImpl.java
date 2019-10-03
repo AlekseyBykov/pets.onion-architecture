@@ -7,7 +7,10 @@ import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
 import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.enums.Errors;
+import alekseybykov.portfolio.component.exceptions.EntityNotFoundException;
 import alekseybykov.portfolio.component.registries.WhitePapperRegistry;
+import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import alekseybykov.portfolio.component.services.validator.Action;
 import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataValidator;
 import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
@@ -34,6 +37,7 @@ public class WhitePapperServiceImpl implements WhitePapperService {
 
     private final WhitePapperRegistry whitePapperRegistry;
     private final WhitepapperMetadataValidator whitepapperMetadataValidator;
+    private final WhitepapperMetadataRegistry whitepapperMetadataRegistry;
 
     @Override
     public Long upload(@NonNull FileTransferObject fileTransferObject,
@@ -70,9 +74,15 @@ public class WhitePapperServiceImpl implements WhitePapperService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public WhitePapper getById(@NonNull Long id) {
+        return whitePapperRegistry.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(Errors.WHITEPAPPER_NOT_FOUND.getName()));
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public WhitePapper createWhitePapper(WhitePapper whitePapper) {
-        WhitePapper saved = whitePapperRegistry.save(whitePapper);
-        return saved;
+        return whitePapperRegistry.save(whitePapper);
     }
 }

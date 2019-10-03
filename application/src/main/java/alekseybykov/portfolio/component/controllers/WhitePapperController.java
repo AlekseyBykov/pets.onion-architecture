@@ -76,12 +76,21 @@ public class WhitePapperController {
 
     @ApiOperation(value = "Get all whitepappers [e.g, for displaying in screen, in table view]")
     @GetMapping()
-    public Page<ScreenDocumentDto> getAllDocumentsForScreen(
+    public Page<ScreenDocumentDto> getAllWhitepappersForScreen(
             @ApiParam("Size of page starting from 0") @RequestParam(value = "page") final Integer page,
             @ApiParam("Page size") @RequestParam(value = "size") final Integer size) {
         Page<WhitePapper> data = whitePapperService.findAllWhitepappers(page, size);
         return new PageImpl<>(screenDocumentMapper.toListDto(data.getContent()),
                 data.getPageable(), data.getTotalElements());
+    }
+
+    @ApiOperation(value = "Get whitepapper by identifier [e.g, for displaying in edit view]")
+    @GetMapping("/get-whitepapper")
+    public ResponseEntity<ScreenDocumentDto> getMetadata(
+            @ApiParam("Whitepapper identifier") @RequestParam("id") Long id) {
+        WhitePapper whitePapper = whitePapperService.getById(id);
+        ScreenDocumentDto screenDocumentDto = screenDocumentMapper.toDto(whitePapper);
+        return ResponseEntity.ok(screenDocumentDto);
     }
 
     @PostMapping()

@@ -26,5 +26,7 @@ public interface WhitePapperService {
 
     void deleteByIds(List<Long> ids);
 
+    WhitePapper getById(@NonNull Long id);
+
     WhitePapper createWhitePapper(WhitePapper whitePapper);
 }

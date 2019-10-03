@@ -14,6 +14,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -28,10 +29,11 @@ public interface WhitePapperRepository extends WhitePapperRegistry, JpaRepositor
     Page<WhitePapper> findAllWhitepappers(Pageable pageable);
 
     @Override
+    @Query(value = "select w from WhitePapper w where w.id = :id ")
+    Optional<WhitePapper> findById(@Param("id") Long id);
+
+    @Override
     @Modifying
-    @Query(value = "delete " +
-            "from WhitePapper w " +
-            "where w.id in (:ids) "
-    )
+    @Query(value = "delete from WhitePapper w where w.id in (:ids) ")
     void deleteByIds(@Param("ids") Collection<Long> ids);
 }

@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.Collection;
+import java.util.Optional;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -21,4 +22,6 @@ public interface WhitePapperRegistry {
     Page<WhitePapper> findAllWhitepappers(Pageable pageable);
 
     void deleteByIds(Collection<Long> ids);
+
+    Optional<WhitePapper> findById(Long id);
 }
