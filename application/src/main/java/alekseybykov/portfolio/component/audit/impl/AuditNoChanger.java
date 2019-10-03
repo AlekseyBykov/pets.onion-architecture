@@ -5,6 +5,7 @@ package alekseybykov.portfolio.component.audit.impl;
 
 import alekseybykov.portfolio.component.audit.AuditManager;
 import alekseybykov.portfolio.component.entities.Auditable;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Currently disabled. See solution based on Hibernate interceptor.
@@ -13,6 +14,7 @@ import alekseybykov.portfolio.component.entities.Auditable;
  * @version 1.0
  * @since   2019-09-24
  */
+@RequiredArgsConstructor
 public class AuditNoChanger implements AuditManager {
     @Override
     public void performPrePersistLogic(Auditable auditable) {

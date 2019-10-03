@@ -10,6 +10,8 @@ import alekseybykov.portfolio.component.entities.Auditable;
 import alekseybykov.portfolio.component.entities.User;
 import alekseybykov.portfolio.component.utils.UUIDValidator;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
@@ -23,6 +25,8 @@ import static java.util.Optional.ofNullable;
  * @version 1.0
  * @since   2019-10-02
  */
+@Component
+@ConditionalOnProperty(name = "audit.enabled", havingValue = "true", matchIfMissing = true)
 public class AuditIntegrator implements Auditor {
 
     @Override
