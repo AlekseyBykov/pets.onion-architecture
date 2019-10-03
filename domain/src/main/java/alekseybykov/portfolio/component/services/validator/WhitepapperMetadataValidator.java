@@ -35,7 +35,7 @@ public class WhitepapperMetadataValidator extends Validator<WhitePapperMetadata>
         final int MAX_TYPE_SIZE = 100;
 
         if (isNull(metadata)) {
-            errors.add("Metadata must be passed");
+            errors.add("Metadata must be presented");
         } else {
             String name = metadata.getName();
             String type = metadata.getType();

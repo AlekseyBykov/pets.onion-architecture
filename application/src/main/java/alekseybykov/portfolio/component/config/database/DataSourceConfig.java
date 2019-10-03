@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
+import static java.util.Objects.isNull;
+
 /**
  * @author  aleksey.n.bykov@gmail.com
  * @version 1.0
@@ -72,7 +74,7 @@ public class DataSourceConfig {
     }
 
     private DataSource getDatasource() {
-        if (dataSource == null) {
+        if (isNull(dataSource)) {
             HikariConfig hikariConfig = new HikariConfig();
             hikariConfig.setDriverClassName(driverClassName);
             hikariConfig.setJdbcUrl(url);

@@ -24,7 +24,7 @@ public class WhitepapperServiceImpl implements WhitepapperService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public WhitePapper createWhitePapper(WhitePapper whitePapper) {
-        WhitePapper saved = documentRegistry.save(whitePapper);
+        WhitePapper saved = whitePapperRegistry.save(whitePapper);
         return saved;
     }
 }

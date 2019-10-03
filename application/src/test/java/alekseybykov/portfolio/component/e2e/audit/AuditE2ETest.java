@@ -3,11 +3,11 @@
 //
 package alekseybykov.portfolio.component.e2e.audit;
 
+import alekseybykov.portfolio.component.audit.helper.AuditHelper;
 import alekseybykov.portfolio.component.e2e.IntegrationTestsBaseClass;
 import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.User;
 import alekseybykov.portfolio.component.entities.WhitePapper;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ class AuditE2ETest extends IntegrationTestsBaseClass {
         final ZonedDateTime createdAt = ZonedDateTime.parse("2019-09-22T10:24:33.267993+03:00[Europe/Moscow]");
         final ZonedDateTime updatedAt = ZonedDateTime.parse("2019-10-23T10:24:33.267993+03:00[Europe/Moscow]");
 
-        User admin = buildDefaultUser();
+        User admin = AuditHelper.getDefaultAudit().getUserCreate();
         Audit audit = Audit.builder()
                 .dateCreate(createdAt)
                 .userCreate(admin)
@@ -99,14 +99,5 @@ class AuditE2ETest extends IntegrationTestsBaseClass {
         assertEquals(updatedWhitePapperAudit.getDateCreate().toInstant(), createdAt.toInstant());
         assertEquals(updatedWhitePapperAudit.getDateUpdate().toInstant(), updatedAt.toInstant());
         assertNotEquals(updatedWhitePapperAudit.getDateUpdate().toInstant(), createdAt.toInstant());
-    }
-
-    private User buildDefaultUser() {
-        return User.builder()
-                .id(NumberUtils.LONG_MINUS_ONE)
-                .firstName("admin")
-                .middleName("admin")
-                .lastName("admin")
-                .build();
     }
 }

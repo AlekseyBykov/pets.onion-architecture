@@ -3,9 +3,11 @@
 //
 package alekseybykov.portfolio.component.controllers;
 
-import alekseybykov.portfolio.component.dto.*;
+import alekseybykov.portfolio.component.dto.FileUploadDto;
+import alekseybykov.portfolio.component.dto.IdsDto;
+import alekseybykov.portfolio.component.dto.ScopeDto;
+import alekseybykov.portfolio.component.dto.WhitePapperMetadataDto;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
-import alekseybykov.portfolio.component.entities.WhitePapper;
 import alekseybykov.portfolio.component.mappings.WhitePapperMapper;
 import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
 import alekseybykov.portfolio.component.utils.FileValidator;
@@ -20,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
-import java.util.List;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -77,10 +78,11 @@ public class WhitePapperController {
         whitePapperService.deleteByIds(idsDto.getIds());
     }
 
-    @GetMapping("/all")
+    // todo temporary removed
+    /*@GetMapping("/all")
     @ApiOperation(value = "Getting all the white pappers in the system")
     public List<WhitepapperItemDto> findAll() {
         List<WhitePapper> data = whitePapperService.findAll();
         return whitePapperMapper.toListDto(data);
-    }
+    }*/
 }
