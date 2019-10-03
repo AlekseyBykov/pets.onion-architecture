@@ -23,6 +23,8 @@ import java.time.ZonedDateTime;
 @Embeddable
 public class Audit {
 
+    public static final String DATE_CREATE = "audit.dateCreate";
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_user_id", referencedColumnName = "id")
     private User userCreate;

@@ -6,6 +6,8 @@ package alekseybykov.portfolio.component.config.audit;
 import alekseybykov.portfolio.component.audit.AuditManager;
 import alekseybykov.portfolio.component.audit.impl.AuditChanger;
 import alekseybykov.portfolio.component.audit.impl.AuditNoChanger;
+import alekseybykov.portfolio.component.services.audit.AuditService;
+import alekseybykov.portfolio.component.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

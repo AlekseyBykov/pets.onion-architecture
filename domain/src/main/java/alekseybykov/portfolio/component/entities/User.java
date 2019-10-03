@@ -27,7 +27,8 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    // todo add login field
+    @Column(name = "login")
+    private String login;
 
     @Column(name = "last_name")
     private String lastName;

@@ -21,6 +21,8 @@ import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 /**
+ * Currently disabled. See solution based on Hibernate interceptor.
+ *
  * @author  aleksey.n.bykov@gmail.com
  * @version 1.0
  * @since   2019-09-24
