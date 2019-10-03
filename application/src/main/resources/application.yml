@@ -6,3 +6,17 @@ server:
   port: 8080
   servlet:
     context-path: /whitepappers/api/v1
+
+fileservice:
+  file:
+    max-size: 104857600
+  move-delay: 5000
+  remove-delay: 10000
+  storage:
+    local:
+      path: whitepappers_local_files
+    minio:
+      bucket: whitepappers
+      host: http://127.0.0.1:9000
+      accessKey: whitepappersminio
+      secretKey: whitepappersminio

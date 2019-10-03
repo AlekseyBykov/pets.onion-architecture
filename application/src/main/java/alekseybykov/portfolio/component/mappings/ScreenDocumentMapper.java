@@ -23,9 +23,9 @@ import static java.util.Objects.nonNull;
 public interface ScreenDocumentMapper extends BaseMapper<WhitePapper, ScreenDocumentDto> {
 
     @Mappings({
-            @Mapping(source = "whitePapper.documentMetadata", target = "userCreate", qualifiedByName = "userCreateToDto"),
+            @Mapping(source = "whitePapper.whitePapperMetadata", target = "userCreate", qualifiedByName = "userCreateToDto"),
             @Mapping(source = "whitePapper.audit.dateCreate", target = "dateCreate"),
-            @Mapping(source = "whitePapper.whitePapperMetadata", target = "documentMetadata")
+            @Mapping(source = "whitePapper.whitePapperMetadata", target = "whitePapperMetadata")
     })
     ScreenDocumentDto toDto(WhitePapper whitePapper);
 
