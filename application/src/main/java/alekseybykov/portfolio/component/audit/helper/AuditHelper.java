@@ -1,3 +1,6 @@
+//
+// Feel free to use these solutions in your work.
+//
 package alekseybykov.portfolio.component.audit.helper;
 
 import alekseybykov.portfolio.component.entities.Audit;
