@@ -1,6 +1,23 @@
 spring:
   profiles:
     active: local
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    generate-ddl: false
+    properties:
+      hibernate:
+        default_schema: whitepappers
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        metadata_builder_contributor: alekseybykov.portfolio.component.config.database.SqlFunctionsMetadataBuilderContributor
+  servlet:
+    multipart:
+      max-request-size: -1
+      max-file-size: -1
 
 server:
   port: 8080
