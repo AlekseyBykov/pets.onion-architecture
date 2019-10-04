@@ -8,6 +8,7 @@ import alekseybykov.portfolio.component.service.user.SecurityService;
 import org.hibernate.EmptyInterceptor;
 import org.hibernate.Transaction;
 import org.hibernate.type.Type;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -25,10 +26,11 @@ public class AuditInterceptor  extends EmptyInterceptor {
 
     private ThreadLocal<User> localUser = new ThreadLocal<>();
 
-    public AuditInterceptor(SecurityService securityService, Auditor auditor) {
+    @Lazy
+    public AuditInterceptor(SecurityService securityService, Auditor auditIntegrator) {
         super();
         this.securityService = securityService;
-        this.auditor = auditor;
+        this.auditor = auditIntegrator;
     }
 
     @Override

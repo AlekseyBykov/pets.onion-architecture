@@ -43,6 +43,7 @@ class AuditE2ETest extends IntegrationTestsBaseClass {
         User admin = AuditHelper.getDefaultAudit().getUserCreate();
         Audit audit = Audit.builder()
                 .dateCreate(createdAt)
+                .dateUpdate(updatedAt)
                 .userCreate(admin)
                 .build();
 
