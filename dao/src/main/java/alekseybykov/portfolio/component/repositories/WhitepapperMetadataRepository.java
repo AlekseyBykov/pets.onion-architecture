@@ -24,7 +24,7 @@ public interface WhitepapperMetadataRepository extends WhitepapperMetadataRegist
             "from WhitePapperMetadata w " +
             "where w.registrationNumber = :registration_number " +
             "and w.registrationDate = :registration_date " +
-            "and w.document.id <> :id"
+            "and w.whitePapper.id <> :id"
     )
     Optional<WhitePapperMetadata> findExistingWhitePapperMetadata(@Param("id") Long id,
                                                                   @Param("registration_number") String registrationNumber,
