@@ -1,6 +1,7 @@
 alter table white_papper_metadata drop constraint if exists white_papper_metadata_created_scope_id_fkey;
 
-alter table if exists scope rename to some_dictionary;
+delete from scope;
+alter table scope rename to some_dictionary;
 
 comment on table some_dictionary is 'Example of some dictionary';
 comment on column some_dictionary.id is 'Dictionary item identifier';
