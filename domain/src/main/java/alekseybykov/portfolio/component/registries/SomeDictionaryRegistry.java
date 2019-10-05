@@ -3,7 +3,7 @@
 //
 package alekseybykov.portfolio.component.registries;
 
-import alekseybykov.portfolio.component.entities.Scope;
+import alekseybykov.portfolio.component.entities.SomeDictionary;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
@@ -14,9 +14,9 @@ import java.util.Optional;
  * @version 1.0
  * @since   2019-10-05
  */
-public interface ScopeRegistry {
+public interface SomeDictionaryRegistry {
 
-    List<Scope> findAll(Sort sort);
+    List<SomeDictionary> findAll(Sort sort);
 
-    Optional<Scope> findById(Long id);
+    Optional<SomeDictionary> findById(Long id);
 }

@@ -3,8 +3,8 @@
 //
 package alekseybykov.portfolio.component.repositories;
 
-import alekseybykov.portfolio.component.entities.Scope;
-import alekseybykov.portfolio.component.registries.ScopeRegistry;
+import alekseybykov.portfolio.component.entities.SomeDictionary;
+import alekseybykov.portfolio.component.registries.SomeDictionaryRegistry;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -16,14 +16,14 @@ import java.util.Optional;
  * @version 1.0
  * @since   2019-10-05
  */
-public interface ScopeRepository extends ScopeRegistry, JpaRepository<Scope, Long> {
+public interface SomeDictionaryRepository extends SomeDictionaryRegistry, JpaRepository<SomeDictionary, Long> {
 
     @Override
-    List<Scope> findAll();
+    List<SomeDictionary> findAll();
 
     @Override
-    List<Scope> findAll(Sort sort);
+    List<SomeDictionary> findAll(Sort sort);
 
     @Override
-    Optional<Scope> findById(Long id);
+    Optional<SomeDictionary> findById(Long id);
 }

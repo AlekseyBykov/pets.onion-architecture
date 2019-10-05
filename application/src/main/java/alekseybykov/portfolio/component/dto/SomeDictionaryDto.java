@@ -19,12 +19,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel(value = "ScopeDto: some scope of whitepapper")
-public class ScopeDto {
+@ApiModel(value = "SomeDictionaryDto: some dictionary for whitepappers")
+public class SomeDictionaryDto {
 
-    @ApiModelProperty("identifier of scope")
+    @ApiModelProperty("identifier of the item")
     private Long id;
 
-    @ApiModelProperty("name of scope")
+    @ApiModelProperty("name of the item")
     private String name;
 }

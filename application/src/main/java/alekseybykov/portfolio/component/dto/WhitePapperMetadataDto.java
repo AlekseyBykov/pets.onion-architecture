@@ -39,6 +39,6 @@ public class WhitePapperMetadataDto {
     @ApiModelProperty("Registration number of whitepapper")
     private String registrationNumber;
 
-    @ApiModelProperty("Scope of whitepapper")
-    private ScopeDto scope;
+    @ApiModelProperty("Some dictionary for whitepapper")
+    private SomeDictionaryDto dictionary;
 }

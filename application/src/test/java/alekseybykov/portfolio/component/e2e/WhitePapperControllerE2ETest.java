@@ -64,8 +64,8 @@ class WhitePapperControllerE2ETest extends IntegrationTestsBaseClass {
                 .param("type", "Some test type")
                 .param("registrationNumber", "Some registration number")
                 .param("registrationDate", LocalDate.now().toString())
-                .param("scopeId", "1")
-                .param("scopeName", "Some scope name");
+                .param("dictItemId", "1")
+                .param("dictItemName", "Some item name");
 
         mockMvc.perform(builder)
                 .andDo(print())

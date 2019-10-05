@@ -45,8 +45,8 @@ public class WhitePapperMetadata implements Auditable {
     private WhitePapper whitePapper;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "scope_id", referencedColumnName = "id")
-    private Scope scope;
+    @JoinColumn(name = "some_dictionary_id", referencedColumnName = "id")
+    private SomeDictionary someDictionary;
 
     @Embedded
     private Audit audit;

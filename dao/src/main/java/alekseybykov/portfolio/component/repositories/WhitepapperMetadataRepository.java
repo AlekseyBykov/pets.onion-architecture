@@ -20,11 +20,11 @@ import java.util.Optional;
  */
 @Repository
 public interface WhitepapperMetadataRepository extends WhitepapperMetadataRegistry, JpaRepository<WhitePapperMetadata, Long> {
-    @Query(value = "select w " +
-            "from WhitePapperMetadata w " +
-            "where w.registrationNumber = :registration_number " +
-            "and w.registrationDate = :registration_date " +
-            "and w.whitePapper.id <> :id"
+    @Query(value = "select wm " +
+            "from WhitePapperMetadata wm " +
+            "where wm.registrationNumber = :registration_number " +
+            "and wm.registrationDate = :registration_date " +
+            "and wm.whitePapper.id <> :id"
     )
     Optional<WhitePapperMetadata> findExistingWhitePapperMetadata(@Param("id") Long id,
                                                                   @Param("registration_number") String registrationNumber,

@@ -57,15 +57,15 @@ public class WhitePapperController {
             @ApiParam("Registration date of whitepapper")
             @RequestParam(name = "registrationDate")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate registrationDate,
-            @ApiParam("Identifier of the scope of whitepapper")
-            @RequestParam(name = "scopeId") Long scopeId,
-            @ApiParam("Name of the scope of whitepapper")
-            @RequestParam(name = "scopeName") String scopeName) {
+            @ApiParam("Identifier of the dictionary item")
+            @RequestParam(name = "dictItemId") Long dictItemId,
+            @ApiParam("Name of the dictionary item")
+            @RequestParam(name = "dictItemName") String dictItemName) {
         fileValidator.validate(file);
-        ScopeDto scopeDto = ScopeDto.builder().id(scopeId).name(scopeName).build();
+        SomeDictionaryDto someDictionaryDto = SomeDictionaryDto.builder().id(dictItemId).name(dictItemName).build();
         WhitePapperMetadataDto whitePapperMetadataDto = WhitePapperMetadataDto.builder().name(name).type(type)
                 .registrationNumber(registrationNumber).registrationDate(registrationDate)
-                .scope(scopeDto).build();
+                .dictionary(someDictionaryDto).build();
 
         FileTransferObject fileTransferObject = FileTransferObject.builder()
                 .fileName(file.getOriginalFilename())

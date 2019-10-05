@@ -19,20 +19,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @version 1.0
  * @since   2019-10-05
  */
-@DisplayName("Tests for scope controller")
-class ScopeControllerE2ETest extends IntegrationTestsBaseClass {
+@DisplayName("Tests for dictionary controller")
+class SomeDictionaryControllerE2ETest extends IntegrationTestsBaseClass {
 
     @Test
     @SneakyThrows
-    @DisplayName("Get all the scopes")
-    void testGetNpaItems() {
-        mockMvc.perform(get("/scope")
+    @DisplayName("Get all the dictionary items")
+    void getAllDictionaryItems() {
+        mockMvc.perform(get("/some-dictionary")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.[0].id", is(1)))
-                .andExpect(jsonPath("$.[0].name", is("First scope value")))
+                .andExpect(jsonPath("$.[0].name", is("First dictionary value")))
                 .andExpect(jsonPath("$.[1].id", is(2)))
-                .andExpect(jsonPath("$.[1].name", is("Second scope value")));
+                .andExpect(jsonPath("$.[1].name", is("Second dictionary value")));
     }
 }

@@ -23,8 +23,8 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "scope")
-public class Scope {
+@Table(name = "some_dictionary")
+public class SomeDictionary {
 
     @Id
     @Column(name = "id")
