@@ -14,7 +14,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum Errors {
-    WHITEPAPPER_NOT_FOUND("Whitepapper not found");
+    WHITEPAPPER_NOT_FOUND("Whitepapper not found"),
+    SCOPE_NOT_FOUND("Scope not found");
 
     private final String name;
 }

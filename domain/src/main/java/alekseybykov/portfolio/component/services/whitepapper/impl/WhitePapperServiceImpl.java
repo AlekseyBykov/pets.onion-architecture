@@ -10,7 +10,6 @@ import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
 import alekseybykov.portfolio.component.enums.Errors;
 import alekseybykov.portfolio.component.exceptions.EntityNotFoundException;
 import alekseybykov.portfolio.component.registries.WhitePapperRegistry;
-import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import alekseybykov.portfolio.component.services.file.FilesService;
 import alekseybykov.portfolio.component.services.validator.Action;
 import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataValidator;
@@ -38,7 +37,6 @@ public class WhitePapperServiceImpl implements WhitePapperService {
 
     private final WhitePapperRegistry whitePapperRegistry;
     private final WhitepapperMetadataValidator whitepapperMetadataValidator;
-    private final WhitepapperMetadataRegistry whitepapperMetadataRegistry;
     private final FilesService filesService;
 
     @Override
