@@ -13,5 +13,8 @@ import java.io.InputStream;
  * @since   2019-10-03
  */
 public interface FilesService {
+
     void saveFile(String fileName, WhitePapper whitePapper, InputStream stream);
+
+    Integer moveAllFilesToTheCloud();
 }

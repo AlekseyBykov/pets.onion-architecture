@@ -76,7 +76,7 @@ class WhitePapperControllerE2ETest extends IntegrationTestsBaseClass {
     @SneakyThrows
     private MockMultipartFile buildMockMultipartFile(String... fileNames) {
         String fileName = fileNames.length > 0 ? fileNames[0]: "file-sample_100kB.docx";
-        InputStream is = new FileInputStream(Paths.get("tmp/"+fileName).toAbsolutePath().toString());
+        InputStream is = new FileInputStream(Paths.get("tmp", fileName).toAbsolutePath().toString());
         return new MockMultipartFile(
             "file",
             fileName,
