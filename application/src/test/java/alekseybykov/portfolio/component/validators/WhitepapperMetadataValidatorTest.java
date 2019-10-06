@@ -64,13 +64,13 @@ class WhitepapperMetadataValidatorTest {
     @DisplayName("Pass metadata with too long name")
     void testValidateMetadataWithLongNameWhenEdit() {
         LocalDate now = LocalDate.now();
-        WhitePapperMetadata documentMetadata = WhitePapperMetadata.builder()
+        WhitePapperMetadata whitePapperMetadata = WhitePapperMetadata.builder()
                 .whitePapper(WhitePapper.builder().id(NumberUtils.LONG_ONE).build())
                 .name(RandomStringUtils.random(501)).type("some type").registrationDate(now)
                 .registrationNumber("REG/N-123").build();
 
         ValidationException thrown = assertThrows(ValidationException.class,
-                () -> validator.validate(documentMetadata, Action.UPDATE));
+                () -> validator.validate(whitePapperMetadata, Action.UPDATE));
 
         assertEquals(thrown.getMessage(), format("%s: [%s]", validatorCanonicalName,
                 "The name cannot contain more than 500 characters"));

@@ -24,13 +24,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class WhitepapperMetadataServiceImpl implements WhitepapperMetadataService {
 
     private final WhitepapperMetadataRegistry registry;
-    private final WhitePapperService documentService;
+    private final WhitePapperService whitePapperService;
     private final WhitepapperMetadataValidator validator;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
     public WhitePapperMetadata save(WhitePapperMetadata whitePapperMetadata, Long id) {
-        WhitePapper whitePapper = documentService.getById(id);
+        WhitePapper whitePapper = whitePapperService.getById(id);
         whitePapperMetadata.setId(whitePapper.getWhitePapperMetadata().getId());
         whitePapperMetadata.setWhitePapper(whitePapper);
 

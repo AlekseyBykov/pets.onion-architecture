@@ -19,5 +19,5 @@ public interface FileMetadataRegistry {
 
     List<FileMetadata> getAllByStorage(FileMetadata.Storage storage);
 
-    Optional<FileMetadata> getByWhitePapperId(Long documentId);
+    Optional<FileMetadata> getByWhitePapperId(Long id);
 }
