@@ -5,8 +5,8 @@ package alekseybykov.portfolio.component.mappings;
 
 import alekseybykov.portfolio.component.dto.ScreenDocumentDto;
 import alekseybykov.portfolio.component.entities.User;
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -20,17 +20,17 @@ import static java.util.Objects.nonNull;
  * @since   2019-10-03
  */
 @Mapper(componentModel = "spring", uses = {UserMapper.class})
-public interface ScreenDocumentMapper extends BaseMapper<WhitePapper, ScreenDocumentDto> {
+public interface ScreenDocumentMapper extends BaseMapper<Whitepapper, ScreenDocumentDto> {
 
     @Mappings({
-            @Mapping(source = "whitePapper.whitePapperMetadata", target = "userCreate", qualifiedByName = "userCreateToDto"),
-            @Mapping(source = "whitePapper.audit.dateCreate", target = "dateCreate"),
-            @Mapping(source = "whitePapper.whitePapperMetadata", target = "whitePapperMetadata")
+            @Mapping(source = "whitepapper.whitepapperMetadata", target = "userCreate", qualifiedByName = "userCreateToDto"),
+            @Mapping(source = "whitepapper.audit.dateCreate", target = "dateCreate"),
+            @Mapping(source = "whitepapper.whitepapperMetadata", target = "whitepapperMetadata")
     })
-    ScreenDocumentDto toDto(WhitePapper whitePapper);
+    ScreenDocumentDto toDto(Whitepapper whitepapper);
 
     @Named("userCreateToDto")
-    default User userCreateToDto(WhitePapperMetadata metadata) {
+    default User userCreateToDto(WhitepapperMetadata metadata) {
         if (nonNull(metadata) && nonNull(metadata.getAudit())) {
             return nonNull(metadata.getAudit().getUserUpdate()) ?
                     metadata.getAudit().getUserUpdate() :

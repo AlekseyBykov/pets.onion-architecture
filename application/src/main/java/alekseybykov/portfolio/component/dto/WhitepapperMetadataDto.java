@@ -21,8 +21,8 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ApiModel(value = "WhitePapperMetadataDto: metadata of whitepapper")
-public class WhitePapperMetadataDto {
+@ApiModel(value = "WhitepapperMetadataDto: metadata of whitepapper")
+public class WhitepapperMetadataDto {
 
     @ApiModelProperty("Identifier of whitepapper")
     private Long id;

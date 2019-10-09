@@ -3,8 +3,8 @@
 //
 package alekseybykov.portfolio.component.mappings;
 
-import alekseybykov.portfolio.component.dto.WhitePapperMetadataDto;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.dto.WhitepapperMetadataDto;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import org.mapstruct.Mapper;
 
 /**
@@ -13,4 +13,4 @@ import org.mapstruct.Mapper;
  * @since   2019-09-08
  */
 @Mapper(componentModel = "spring")
-public interface WhitePapperMapper extends BaseMapper<WhitePapperMetadata, WhitePapperMetadataDto> { }
+public interface WhitepapperMapper extends BaseMapper<WhitepapperMetadata, WhitepapperMetadataDto> { }

@@ -3,7 +3,7 @@
 //
 package alekseybykov.portfolio.component.registries;
 
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -15,9 +15,9 @@ import java.util.Optional;
  */
 public interface WhitepapperMetadataRegistry {
 
-    WhitePapperMetadata save(WhitePapperMetadata whitePapperMetadata);
+    WhitepapperMetadata save(WhitepapperMetadata whitepapperMetadata);
 
-    Optional<WhitePapperMetadata> findExistingWhitePapperMetadata(Long id,
+    Optional<WhitepapperMetadata> findExistingWhitepapperMetadata(Long id,
                                                                   String registrationNumber,
                                                                   LocalDate registrationDate);
 }

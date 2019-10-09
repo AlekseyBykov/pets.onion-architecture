@@ -3,13 +3,13 @@
 //
 package alekseybykov.portfolio.component.services.metadata.impl;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import alekseybykov.portfolio.component.services.metadata.WhitepapperMetadataService;
 import alekseybykov.portfolio.component.services.validator.Action;
 import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataValidator;
-import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
+import alekseybykov.portfolio.component.services.whitepapper.WhitepapperService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,18 +24,18 @@ import org.springframework.transaction.annotation.Transactional;
 public class WhitepapperMetadataServiceImpl implements WhitepapperMetadataService {
 
     private final WhitepapperMetadataRegistry registry;
-    private final WhitePapperService whitePapperService;
+    private final WhitepapperService whitepapperService;
     private final WhitepapperMetadataValidator validator;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public WhitePapperMetadata save(WhitePapperMetadata whitePapperMetadata, Long id) {
-        WhitePapper whitePapper = whitePapperService.getById(id);
-        whitePapperMetadata.setId(whitePapper.getWhitePapperMetadata().getId());
-        whitePapperMetadata.setWhitePapper(whitePapper);
+    public WhitepapperMetadata save(WhitepapperMetadata whitepapperMetadata, Long id) {
+        Whitepapper whitepapper = whitepapperService.getById(id);
+        whitepapperMetadata.setId(whitepapper.getWhitepapperMetadata().getId());
+        whitepapperMetadata.setWhitepapper(whitepapper);
 
-        validator.validate(whitePapperMetadata, Action.UPDATE);
+        validator.validate(whitepapperMetadata, Action.UPDATE);
 
-        return registry.save(whitePapperMetadata);
+        return registry.save(whitepapperMetadata);
     }
 }

@@ -7,7 +7,7 @@ import alekseybykov.portfolio.component.audit.helper.AuditHelper;
 import alekseybykov.portfolio.component.e2e.IntegrationTestsBaseClass;
 import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.User;
-import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.Whitepapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,58 +47,58 @@ class AuditE2ETest extends IntegrationTestsBaseClass {
                 .userCreate(admin)
                 .build();
 
-        WhitePapper whitePapper = WhitePapper.builder()
+        Whitepapper whitepapper = Whitepapper.builder()
                 .name("whitepapper")
                 .audit(audit)
                 .build();
 
-        em.persist(whitePapper);
+        em.persist(whitepapper);
         em.flush();
         em.clear();
 
-        Long createdWhitePapperId = whitePapper.getId();
-        assertNotNull(createdWhitePapperId);
+        Long createdWhitepapperId = whitepapper.getId();
+        assertNotNull(createdWhitepapperId);
 
-        WhitePapper createdWhitePapper = em.find(WhitePapper.class, createdWhitePapperId);
-        assertNotNull(createdWhitePapper);
+        Whitepapper createdWhitepapper = em.find(Whitepapper.class, createdWhitepapperId);
+        assertNotNull(createdWhitepapper);
 
-        Audit createdWhitePapperAudit = createdWhitePapper.getAudit();
-        assertNotNull(createdWhitePapperAudit);
+        Audit createdWhitepapperAudit = createdWhitepapper.getAudit();
+        assertNotNull(createdWhitepapperAudit);
 
-        User createdWhitePapperUser = createdWhitePapperAudit.getUserCreate();
-        assertNotNull(createdWhitePapperUser);
+        User createdWhitepapperUser = createdWhitepapperAudit.getUserCreate();
+        assertNotNull(createdWhitepapperUser);
 
-        assertEquals(createdWhitePapperUser.getId(), admin.getId());
-        assertEquals(createdWhitePapperUser.getLastName(), admin.getLastName());
-        assertEquals(createdWhitePapperUser.getFirstName(), admin.getFirstName());
-        assertEquals(createdWhitePapperUser.getMiddleName(), admin.getMiddleName());
-        assertEquals(createdWhitePapperAudit.getDateCreate().toInstant(), createdAt.toInstant());
+        assertEquals(createdWhitepapperUser.getId(), admin.getId());
+        assertEquals(createdWhitepapperUser.getLastName(), admin.getLastName());
+        assertEquals(createdWhitepapperUser.getFirstName(), admin.getFirstName());
+        assertEquals(createdWhitepapperUser.getMiddleName(), admin.getMiddleName());
+        assertEquals(createdWhitepapperAudit.getDateCreate().toInstant(), createdAt.toInstant());
 
-        createdWhitePapperAudit.setDateUpdate(updatedAt);
-        createdWhitePapper.setAudit(createdWhitePapperAudit);
+        createdWhitepapperAudit.setDateUpdate(updatedAt);
+        createdWhitepapper.setAudit(createdWhitepapperAudit);
 
-        em.persist(createdWhitePapper);
+        em.persist(createdWhitepapper);
         em.flush();
         em.clear();
 
-        Long updatedWhitePapperId = createdWhitePapper.getId();
-        assertNotNull(updatedWhitePapperId);
+        Long updatedWhitepapperId = createdWhitepapper.getId();
+        assertNotNull(updatedWhitepapperId);
 
-        WhitePapper updatedWhitePapper = em.find(WhitePapper.class, updatedWhitePapperId);
-        assertNotNull(updatedWhitePapper);
+        Whitepapper updatedWhitepapper = em.find(Whitepapper.class, updatedWhitepapperId);
+        assertNotNull(updatedWhitepapper);
 
-        Audit updatedWhitePapperAudit = updatedWhitePapper.getAudit();
-        assertNotNull(updatedWhitePapperAudit);
+        Audit updatedWhitepapperAudit = updatedWhitepapper.getAudit();
+        assertNotNull(updatedWhitepapperAudit);
 
-        User updatedWhitePapperUser = updatedWhitePapperAudit.getUserCreate();
-        assertNotNull(updatedWhitePapperUser);
+        User updatedWhitepapperUser = updatedWhitepapperAudit.getUserCreate();
+        assertNotNull(updatedWhitepapperUser);
 
-        assertEquals(updatedWhitePapperUser.getId(), admin.getId());
-        assertEquals(updatedWhitePapperUser.getLastName(), admin.getLastName());
-        assertEquals(updatedWhitePapperUser.getFirstName(), admin.getFirstName());
-        assertEquals(updatedWhitePapperUser.getMiddleName(), admin.getMiddleName());
-        assertEquals(updatedWhitePapperAudit.getDateCreate().toInstant(), createdAt.toInstant());
-        assertEquals(updatedWhitePapperAudit.getDateUpdate().toInstant(), updatedAt.toInstant());
-        assertNotEquals(updatedWhitePapperAudit.getDateUpdate().toInstant(), createdAt.toInstant());
+        assertEquals(updatedWhitepapperUser.getId(), admin.getId());
+        assertEquals(updatedWhitepapperUser.getLastName(), admin.getLastName());
+        assertEquals(updatedWhitepapperUser.getFirstName(), admin.getFirstName());
+        assertEquals(updatedWhitepapperUser.getMiddleName(), admin.getMiddleName());
+        assertEquals(updatedWhitepapperAudit.getDateCreate().toInstant(), createdAt.toInstant());
+        assertEquals(updatedWhitepapperAudit.getDateUpdate().toInstant(), updatedAt.toInstant());
+        assertNotEquals(updatedWhitepapperAudit.getDateUpdate().toInstant(), createdAt.toInstant());
     }
 }

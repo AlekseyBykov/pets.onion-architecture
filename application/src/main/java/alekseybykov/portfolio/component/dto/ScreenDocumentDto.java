@@ -37,5 +37,5 @@ public class ScreenDocumentDto {
     private ZonedDateTime dateCreate;
 
     @ApiModelProperty("Metadata of whitepapper")
-    private WhitePapperMetadataDto whitePapperMetadata;
+    private WhitepapperMetadataDto whitepapperMetadata;
 }

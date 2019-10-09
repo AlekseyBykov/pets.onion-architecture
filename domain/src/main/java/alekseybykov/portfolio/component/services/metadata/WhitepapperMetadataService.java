@@ -3,7 +3,7 @@
 //
 package alekseybykov.portfolio.component.services.metadata;
 
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 
 /**
  * @author  aleksey.n.bykov@gmail.com
@@ -11,5 +11,5 @@ import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
  * @since   2019-10-03
  */
 public interface WhitepapperMetadataService {
-    WhitePapperMetadata save(WhitePapperMetadata whitePapperMetadata, Long id);
+    WhitepapperMetadata save(WhitepapperMetadata whitepapperMetadata, Long id);
 }

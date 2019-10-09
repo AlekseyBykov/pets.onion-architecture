@@ -3,7 +3,7 @@
 //
 package alekseybykov.portfolio.component.services.file;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.Whitepapper;
 
 import java.io.InputStream;
 
@@ -14,7 +14,7 @@ import java.io.InputStream;
  */
 public interface FilesService {
 
-    void saveFile(String fileName, WhitePapper whitePapper, InputStream stream);
+    void saveFile(String fileName, Whitepapper whitepapper, InputStream stream);
 
     Integer moveAllFilesToTheCloud();
 }

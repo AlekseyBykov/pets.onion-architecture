@@ -3,8 +3,8 @@
 //
 package alekseybykov.portfolio.component.repositories;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.registries.WhitePapperRegistry;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.registries.WhitepapperRegistry;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,18 +22,18 @@ import java.util.Optional;
  * @since   2019-09-08
  */
 @Repository
-public interface WhitePapperRepository extends WhitePapperRegistry, JpaRepository<WhitePapper, Long> {
+public interface WhitepapperRepository extends WhitepapperRegistry, JpaRepository<Whitepapper, Long> {
 
     @Override
-    @Query(value = "select w from WhitePapper w ", countQuery = "select count(w) from WhitePapper w ")
-    Page<WhitePapper> findAllWhitepappers(Pageable pageable);
+    @Query(value = "select w from Whitepapper w ", countQuery = "select count(w) from Whitepapper w ")
+    Page<Whitepapper> findAllWhitepappers(Pageable pageable);
 
     @Override
-    @Query(value = "select w from WhitePapper w where w.id = :id ")
-    Optional<WhitePapper> findById(@Param("id") Long id);
+    @Query(value = "select w from Whitepapper w where w.id = :id ")
+    Optional<Whitepapper> findById(@Param("id") Long id);
 
     @Override
     @Modifying
-    @Query(value = "delete from WhitePapper w where w.id in (:ids) ")
+    @Query(value = "delete from Whitepapper w where w.id in (:ids) ")
     void deleteByIds(@Param("ids") Collection<Long> ids);
 }

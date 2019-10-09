@@ -3,8 +3,8 @@
 //
 package alekseybykov.portfolio.component.services.validator;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -23,12 +23,12 @@ import static java.util.Objects.isNull;
  */
 @Component
 @RequiredArgsConstructor
-public class WhitepapperMetadataValidator extends Validator<WhitePapperMetadata> {
+public class WhitepapperMetadataValidator extends Validator<WhitepapperMetadata> {
 
     private final WhitepapperMetadataRegistry whitepapperMetadataRegistry;
 
     @Override
-    protected void validate(WhitePapperMetadata metadata, Action action, Collection<String> errors) {
+    protected void validate(WhitepapperMetadata metadata, Action action, Collection<String> errors) {
 
         final int MAX_NAME_SIZE = 500;
         final int MAX_REG_NUMBER_SIZE = 50;
@@ -74,11 +74,11 @@ public class WhitepapperMetadataValidator extends Validator<WhitePapperMetadata>
         }
     }
 
-    private void validateForExistingWhitepapper(WhitePapperMetadata metadata, Collection<String> errors) {
-        WhitePapper whitePapper = metadata.getWhitePapper();
-        Long id = isNull(whitePapper) ? NumberUtils.LONG_MINUS_ONE : whitePapper.getId();
+    private void validateForExistingWhitepapper(WhitepapperMetadata metadata, Collection<String> errors) {
+        Whitepapper whitepapper = metadata.getWhitepapper();
+        Long id = isNull(whitepapper) ? NumberUtils.LONG_MINUS_ONE : whitepapper.getId();
         whitepapperMetadataRegistry
-                .findExistingWhitePapperMetadata(id, metadata.getRegistrationNumber(), metadata.getRegistrationDate())
+                .findExistingWhitepapperMetadata(id, metadata.getRegistrationNumber(), metadata.getRegistrationDate())
                 .ifPresent(e -> errors.add(
                         "White paper already exists. Check data and upload new one."));
     }

@@ -24,5 +24,5 @@ public interface FileMetadataRepository extends FileMetadataRegistry, JpaReposit
     List<FileMetadata> getAllByStorage(@Param("storage") FileMetadata.Storage storage);
 
     @Override
-    Optional<FileMetadata> getByWhitePapperId(@Param("id") Long id);
+    Optional<FileMetadata> getByWhitepapperId(@Param("id") Long id);
 }

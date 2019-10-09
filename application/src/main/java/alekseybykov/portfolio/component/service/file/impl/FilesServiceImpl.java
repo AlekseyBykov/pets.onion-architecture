@@ -5,7 +5,7 @@ package alekseybykov.portfolio.component.service.file.impl;
 
 import alekseybykov.portfolio.component.entities.FileMetadata;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
-import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.Whitepapper;
 import alekseybykov.portfolio.component.enums.FileFormat;
 import alekseybykov.portfolio.component.exceptions.EntityNotFoundException;
 import alekseybykov.portfolio.component.exceptions.WorkWithFilesException;
@@ -73,7 +73,7 @@ public class FilesServiceImpl implements FilesService {
     }
 
     @Override
-    public void saveFile(String fileName, WhitePapper whitePapper, InputStream stream) {
+    public void saveFile(String fileName, Whitepapper whitepapper, InputStream stream) {
         byte[] bytes;
         try {
             bytes = IOUtils.toByteArray(stream);
@@ -83,7 +83,7 @@ public class FilesServiceImpl implements FilesService {
                 .fileName(fileName)
                 .uuid(uuid)
                 .storage(LOCAL)
-                .whitePapper(whitePapper)
+                .whitepapper(whitepapper)
                 .build();
             fileMetadataRegistry.save(fileMetadata);
         } catch (IOException e) {
@@ -100,7 +100,7 @@ public class FilesServiceImpl implements FilesService {
                     minioClient.putObject(
                         bucketName,
                         fileMetadata.getUuid(),
-                        getFileStreamById(fileMetadata.getWhitePapper().getId()).getStream(),
+                        getFileStreamById(fileMetadata.getWhitepapper().getId()).getStream(),
                         FileFormat.DOCX.getName()
                     );
                     fileMetadata.setStorage(MINIO);
@@ -122,7 +122,7 @@ public class FilesServiceImpl implements FilesService {
 
     @Transactional(readOnly = true)
     public FileTransferObject getFileStreamById(@NonNull Long id) {
-        FileMetadata fileMetadata = fileMetadataRegistry.getByWhitePapperId(id).orElseThrow(EntityNotFoundException::new);
+        FileMetadata fileMetadata = fileMetadataRegistry.getByWhitepapperId(id).orElseThrow(EntityNotFoundException::new);
         if (MINIO.equals(fileMetadata.getStorage())) {
             try {
                 return FileTransferObject.builder()

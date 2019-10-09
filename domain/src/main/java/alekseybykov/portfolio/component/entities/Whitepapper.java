@@ -17,11 +17,11 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"audit", "whitePapperMetadata"})
-@ToString(exclude = {"audit", "whitePapperMetadata"})
+@EqualsAndHashCode(exclude = {"audit", "whitepapperMetadata"})
+@ToString(exclude = {"audit", "whitepapperMetadata"})
 @Table(name = "white_papper")
 //@EntityListeners(AuditListener.class)
-public class WhitePapper implements Auditable {
+public class Whitepapper implements Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -33,6 +33,6 @@ public class WhitePapper implements Auditable {
     @Embedded
     private Audit audit;
 
-    @OneToOne(mappedBy = "whitePapper", cascade = CascadeType.ALL)
-    private WhitePapperMetadata whitePapperMetadata;
+    @OneToOne(mappedBy = "whitepapper", cascade = CascadeType.ALL)
+    private WhitepapperMetadata whitepapperMetadata;
 }

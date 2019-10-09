@@ -3,8 +3,8 @@
 //
 package alekseybykov.portfolio.component.validators;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import alekseybykov.portfolio.component.services.validator.Action;
 import alekseybykov.portfolio.component.services.validator.ValidationException;
@@ -38,7 +38,7 @@ class WhitepapperMetadataValidatorTest {
     @Test
     @DisplayName("Upload file without metadata")
     void testValidateNullMetadata() {
-        WhitePapperMetadata metadata = null;
+        WhitepapperMetadata metadata = null;
         ValidationException thrown = assertThrows(ValidationException.class,
                 () -> validator.validate(metadata, Action.CREATE));
 
@@ -50,7 +50,7 @@ class WhitepapperMetadataValidatorTest {
     @DisplayName("Pass metadata with empty name")
     void testValidateMetadataWithEmptyNameWhenUpload() {
         LocalDate now = LocalDate.now();
-        WhitePapperMetadata metadata = WhitePapperMetadata.builder().name(StringUtils.EMPTY).type("some type")
+        WhitepapperMetadata metadata = WhitepapperMetadata.builder().name(StringUtils.EMPTY).type("some type")
                 .registrationDate(now).registrationNumber("REG/N-123").build();
 
         ValidationException thrown = assertThrows(ValidationException.class,
@@ -64,13 +64,13 @@ class WhitepapperMetadataValidatorTest {
     @DisplayName("Pass metadata with too long name")
     void testValidateMetadataWithLongNameWhenEdit() {
         LocalDate now = LocalDate.now();
-        WhitePapperMetadata whitePapperMetadata = WhitePapperMetadata.builder()
-                .whitePapper(WhitePapper.builder().id(NumberUtils.LONG_ONE).build())
+        WhitepapperMetadata whitepapperMetadata = WhitepapperMetadata.builder()
+                .whitepapper(Whitepapper.builder().id(NumberUtils.LONG_ONE).build())
                 .name(RandomStringUtils.random(501)).type("some type").registrationDate(now)
                 .registrationNumber("REG/N-123").build();
 
         ValidationException thrown = assertThrows(ValidationException.class,
-                () -> validator.validate(whitePapperMetadata, Action.UPDATE));
+                () -> validator.validate(whitepapperMetadata, Action.UPDATE));
 
         assertEquals(thrown.getMessage(), format("%s: [%s]", validatorCanonicalName,
                 "The name cannot contain more than 500 characters"));

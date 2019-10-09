@@ -17,8 +17,8 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"whitePapper", "audit"})
-@ToString(exclude = {"whitePapper", "audit"})
+@EqualsAndHashCode(exclude = {"whitepapper", "audit"})
+@ToString(exclude = {"whitepapper", "audit"})
 @Table(name = "file_metadata")
 public class FileMetadata implements Auditable {
 
@@ -50,5 +50,5 @@ public class FileMetadata implements Auditable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "white_papper_id", referencedColumnName = "id")
-    private WhitePapper whitePapper;
+    private Whitepapper whitepapper;
 }

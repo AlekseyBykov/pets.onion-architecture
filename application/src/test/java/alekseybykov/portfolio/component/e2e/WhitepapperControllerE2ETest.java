@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @since   2019-10-03
  */
 @DisplayName("Tests for whitepappers controller")
-class WhitePapperControllerE2ETest extends IntegrationTestsBaseClass {
+class WhitepapperControllerE2ETest extends IntegrationTestsBaseClass {
 
     private static String filesPath;
 

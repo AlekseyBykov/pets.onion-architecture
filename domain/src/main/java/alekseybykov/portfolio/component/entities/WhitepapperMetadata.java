@@ -22,7 +22,7 @@ import java.time.LocalDate;
 @ToString(exclude = {"audit"})
 @Table(name = "white_papper_metadata")
 //@EntityListeners(AuditListener.class)
-public class WhitePapperMetadata implements Auditable {
+public class WhitepapperMetadata implements Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -42,7 +42,7 @@ public class WhitePapperMetadata implements Auditable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "white_papper_id")
-    private WhitePapper whitePapper;
+    private Whitepapper whitepapper;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "some_dictionary_id", referencedColumnName = "id")

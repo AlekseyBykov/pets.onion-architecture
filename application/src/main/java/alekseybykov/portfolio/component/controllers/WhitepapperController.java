@@ -5,11 +5,11 @@ package alekseybykov.portfolio.component.controllers;
 
 import alekseybykov.portfolio.component.dto.*;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
-import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.Whitepapper;
 import alekseybykov.portfolio.component.mappings.ScreenDocumentMapper;
-import alekseybykov.portfolio.component.mappings.WhitePapperMapper;
+import alekseybykov.portfolio.component.mappings.WhitepapperMapper;
 import alekseybykov.portfolio.component.services.metadata.WhitepapperMetadataService;
-import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
+import alekseybykov.portfolio.component.services.whitepapper.WhitepapperService;
 import alekseybykov.portfolio.component.utils.FileValidator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,10 +34,10 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 @RequestMapping("/white-pappers")
 @Api(tags = "whitepappers", description = "Controller for working with whitepappers")
-public class WhitePapperController {
+public class WhitepapperController {
 
-    private final WhitePapperService whitePapperService;
-    private final WhitePapperMapper whitePapperMapper;
+    private final WhitepapperService whitepapperService;
+    private final WhitepapperMapper whitepapperMapper;
     private final WhitepapperMetadataService whitepapperMetadataService;
     private final FileValidator fileValidator;
     private final ScreenDocumentMapper screenDocumentMapper;
@@ -45,7 +45,7 @@ public class WhitePapperController {
     @ApiOperation(value = "Upload file with metadata")
     @PostMapping("/upload")
     @SneakyThrows
-    public ResponseEntity<FileUploadDto> uploadWhitePapper(
+    public ResponseEntity<FileUploadDto> uploadWhitepapper(
             @ApiParam("Whitepapper's file")
             @RequestPart(name = "file") MultipartFile file,
             @ApiParam("Name of whitepapper")
@@ -63,7 +63,7 @@ public class WhitePapperController {
             @RequestParam(name = "dictItemName") String dictItemName) {
         fileValidator.validate(file);
         SomeDictionaryDto someDictionaryDto = SomeDictionaryDto.builder().id(dictItemId).name(dictItemName).build();
-        WhitePapperMetadataDto whitePapperMetadataDto = WhitePapperMetadataDto.builder().name(name).type(type)
+        WhitepapperMetadataDto whitepapperMetadataDto = WhitepapperMetadataDto.builder().name(name).type(type)
                 .registrationNumber(registrationNumber).registrationDate(registrationDate)
                 .dictionary(someDictionaryDto).build();
 
@@ -71,8 +71,8 @@ public class WhitePapperController {
                 .fileName(file.getOriginalFilename())
                 .stream(file.getInputStream()).build();
 
-        Long id = whitePapperService.upload(fileTransferObject,
-                whitePapperMapper.toEntity(whitePapperMetadataDto));
+        Long id = whitepapperService.upload(fileTransferObject,
+                whitepapperMapper.toEntity(whitepapperMetadataDto));
         return ResponseEntity.ok(FileUploadDto.builder().id(id).build());
     }
 
@@ -81,7 +81,7 @@ public class WhitePapperController {
     public Page<ScreenDocumentDto> getAllWhitepappersForScreen(
             @ApiParam("Size of page starting from 0") @RequestParam(value = "page") final Integer page,
             @ApiParam("Page size") @RequestParam(value = "size") final Integer size) {
-        Page<WhitePapper> data = whitePapperService.findAllWhitepappers(page, size);
+        Page<Whitepapper> data = whitepapperService.findAllWhitepappers(page, size);
         return new PageImpl<>(screenDocumentMapper.toListDto(data.getContent()),
                 data.getPageable(), data.getTotalElements());
     }
@@ -90,8 +90,8 @@ public class WhitePapperController {
     @GetMapping("/get-whitepapper")
     public ResponseEntity<ScreenDocumentDto> getMetadata(
             @ApiParam("Whitepapper identifier") @RequestParam("id") Long id) {
-        WhitePapper whitePapper = whitePapperService.getById(id);
-        ScreenDocumentDto screenDocumentDto = screenDocumentMapper.toDto(whitePapper);
+        Whitepapper whitepapper = whitepapperService.getById(id);
+        ScreenDocumentDto screenDocumentDto = screenDocumentMapper.toDto(whitepapper);
         return ResponseEntity.ok(screenDocumentDto);
     }
 
@@ -99,13 +99,13 @@ public class WhitePapperController {
     @PutMapping("/update-metadata")
     public ResponseEntity<Long> updateMetadata(
             @ApiParam("Identifier of the whitepapper") @RequestParam("id") Long id,
-            @ApiParam("Updated metadata") @RequestBody WhitePapperMetadataDto dto) {
-        return ResponseEntity.ok(whitepapperMetadataService.save(whitePapperMapper.toEntity(dto), id).getId());
+            @ApiParam("Updated metadata") @RequestBody WhitepapperMetadataDto dto) {
+        return ResponseEntity.ok(whitepapperMetadataService.save(whitepapperMapper.toEntity(dto), id).getId());
     }
 
     @PostMapping()
     @ApiOperation(value = "Deleting white pappers by dentifiers")
     public void deleteByIds(@ApiParam("list of white pappers") @RequestBody IdsDto idsDto) {
-        whitePapperService.deleteByIds(idsDto.getIds());
+        whitepapperService.deleteByIds(idsDto.getIds());
     }
 }

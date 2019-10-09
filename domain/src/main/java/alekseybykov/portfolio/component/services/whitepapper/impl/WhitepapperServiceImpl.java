@@ -5,15 +5,15 @@ package alekseybykov.portfolio.component.services.whitepapper.impl;
 
 import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.FileTransferObject;
-import alekseybykov.portfolio.component.entities.WhitePapper;
-import alekseybykov.portfolio.component.entities.WhitePapperMetadata;
+import alekseybykov.portfolio.component.entities.Whitepapper;
+import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
 import alekseybykov.portfolio.component.enums.Errors;
 import alekseybykov.portfolio.component.exceptions.EntityNotFoundException;
-import alekseybykov.portfolio.component.registries.WhitePapperRegistry;
+import alekseybykov.portfolio.component.registries.WhitepapperRegistry;
 import alekseybykov.portfolio.component.services.file.FilesService;
 import alekseybykov.portfolio.component.services.validator.Action;
 import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataValidator;
-import alekseybykov.portfolio.component.services.whitepapper.WhitePapperService;
+import alekseybykov.portfolio.component.services.whitepapper.WhitepapperService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -33,50 +33,50 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class WhitePapperServiceImpl implements WhitePapperService {
+public class WhitepapperServiceImpl implements WhitepapperService {
 
-    private final WhitePapperRegistry whitePapperRegistry;
+    private final WhitepapperRegistry whitepapperRegistry;
     private final WhitepapperMetadataValidator whitepapperMetadataValidator;
     private final FilesService filesService;
 
     @Override
     public Long upload(@NonNull FileTransferObject fileTransferObject,
-                       @NonNull WhitePapperMetadata whitePapperMetadata) {
+                       @NonNull WhitepapperMetadata whitepapperMetadata) {
 
-        whitepapperMetadataValidator.validate(whitePapperMetadata, Action.CREATE);
+        whitepapperMetadataValidator.validate(whitepapperMetadata, Action.CREATE);
 
         InputStream stream = fileTransferObject.getStream();
         String fileName = fileTransferObject.getFileName();
 
-        WhitePapper whitePapper = WhitePapper.builder()
+        Whitepapper whitepapper = Whitepapper.builder()
                 .name(fileName)
-                .whitePapperMetadata(whitePapperMetadata)
+                .whitepapperMetadata(whitepapperMetadata)
                 .build();
-        whitePapperMetadata.setWhitePapper(whitePapper);
+        whitepapperMetadata.setWhitepapper(whitepapper);
 
-        WhitePapper createdWhitePapper = whitePapperRegistry.save(whitePapper);
+        Whitepapper createdWhitepapper = whitepapperRegistry.save(whitepapper);
 
-        filesService.saveFile(fileName, whitePapper, stream);
+        filesService.saveFile(fileName, whitepapper, stream);
 
-        return createdWhitePapper.getId();
+        return createdWhitepapper.getId();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Page<WhitePapper> findAllWhitepappers(Integer page, Integer size) {
+    public Page<Whitepapper> findAllWhitepappers(Integer page, Integer size) {
         Pageable pageable = PageRequest.of(page, size, new Sort(Sort.Direction.DESC, Audit.DATE_CREATE));
-        return whitePapperRegistry.findAllWhitepappers(pageable);
+        return whitepapperRegistry.findAllWhitepappers(pageable);
     }
 
     @Override
     public void deleteByIds(List<Long> ids) {
-        whitePapperRegistry.deleteByIds(ids);
+        whitepapperRegistry.deleteByIds(ids);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public WhitePapper getById(@NonNull Long id) {
-        return whitePapperRegistry.findById(id)
+    public Whitepapper getById(@NonNull Long id) {
+        return whitepapperRegistry.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(Errors.WHITEPAPPER_NOT_FOUND.getName()));
     }
 }

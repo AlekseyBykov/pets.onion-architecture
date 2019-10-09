@@ -3,7 +3,7 @@
 //
 package alekseybykov.portfolio.component.registries;
 
-import alekseybykov.portfolio.component.entities.WhitePapper;
+import alekseybykov.portfolio.component.entities.Whitepapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -15,13 +15,13 @@ import java.util.Optional;
  * @version 1.0
  * @since   2019-09-08
  */
-public interface WhitePapperRegistry {
+public interface WhitepapperRegistry {
 
-    WhitePapper save(WhitePapper whitePapper);
+    Whitepapper save(Whitepapper whitepapper);
 
-    Page<WhitePapper> findAllWhitepappers(Pageable pageable);
+    Page<Whitepapper> findAllWhitepappers(Pageable pageable);
 
     void deleteByIds(Collection<Long> ids);
 
-    Optional<WhitePapper> findById(Long id);
+    Optional<Whitepapper> findById(Long id);
 }
