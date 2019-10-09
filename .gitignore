@@ -7,9 +7,6 @@ logs/*
 application/*.iml
 application/target/
 
-common/*.iml
-common/target/
-
 dao/*.iml
 dao/target/
 
