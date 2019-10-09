@@ -19,16 +19,16 @@ import org.springframework.context.annotation.Configuration;
 public class MinioConfig {
 
     @Value("${fileservice.storage.minio.host}")
-    private String minioHost;
+    private String host;
 
-    @Value("${fileservice.storage.minio.accessKey}")
-    private String minioAccessKey;
+    @Value("${fileservice.storage.minio.login}")
+    private String login;
 
-    @Value("${fileservice.storage.minio.secretKey}")
-    private String minioSecretKey;
+    @Value("${fileservice.storage.minio.password}")
+    private String password;
 
     @Bean
     public MinioClient minioClient() throws InvalidPortException, InvalidEndpointException {
-        return new MinioClient(minioHost, minioAccessKey, minioSecretKey);
+        return new MinioClient(host, login, password);
     }
 }

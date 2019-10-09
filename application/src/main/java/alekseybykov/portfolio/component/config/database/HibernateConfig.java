@@ -17,7 +17,7 @@ import java.util.Map;
  */
 @Component
 @RequiredArgsConstructor
-public class HibernateConfiguration implements HibernatePropertiesCustomizer {
+public class HibernateConfig implements HibernatePropertiesCustomizer {
 
     private final AuditInterceptor auditInterceptor;
 

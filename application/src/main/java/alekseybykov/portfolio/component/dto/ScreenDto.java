@@ -21,8 +21,8 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel(value = "ScreenDocumentDto: document for displaying in screen")
-public class ScreenDocumentDto {
+@ApiModel(value = "ScreenDto: data for displaying in screens")
+public class ScreenDto {
 
     @ApiModelProperty("Identifier of the whitepapper")
     private Long id;

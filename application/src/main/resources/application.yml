@@ -26,14 +26,13 @@ server:
 
 fileservice:
   file:
-    max-size: 104857600
-  move-delay: 5000
-  remove-delay: 10000
+    max-size: 52428800
+  move-delay: 10000
   storage:
     local:
       path: whitepappers_local_files
     minio:
       bucket: whitepappers
       host: http://127.0.0.1:9000
-      accessKey: whitepappersminio
-      secretKey: whitepappersminio
+      login: whitepappersminio
+      password: whitepappersminio

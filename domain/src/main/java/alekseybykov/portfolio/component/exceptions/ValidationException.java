@@ -1,7 +1,7 @@
 //
 // Feel free to use these solutions in your work.
 //
-package alekseybykov.portfolio.component.services.validator;
+package alekseybykov.portfolio.component.exceptions;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -23,9 +23,6 @@ spring:
 schema:
   recreate: true
 
-auth:
-  enabled: false
-
 jobs:
   enabled: false
 

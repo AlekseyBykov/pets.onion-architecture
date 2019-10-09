@@ -4,7 +4,7 @@
 package alekseybykov.portfolio.component.e2e.audit;
 
 import alekseybykov.portfolio.component.audit.helper.AuditHelper;
-import alekseybykov.portfolio.component.e2e.IntegrationTestsBaseClass;
+import alekseybykov.portfolio.component.e2e.base.IntegrationTestsBaseClass;
 import alekseybykov.portfolio.component.entities.Audit;
 import alekseybykov.portfolio.component.entities.User;
 import alekseybykov.portfolio.component.entities.Whitepapper;

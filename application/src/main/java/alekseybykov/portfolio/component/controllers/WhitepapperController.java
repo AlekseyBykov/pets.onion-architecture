@@ -45,7 +45,7 @@ public class WhitepapperController {
     @ApiOperation(value = "Upload file with metadata")
     @PostMapping("/upload")
     @SneakyThrows
-    public ResponseEntity<FileUploadDto> uploadWhitepapper(
+    public ResponseEntity<FileUploadDto> uploadFileWithMetadata(
             @ApiParam("Whitepapper's file")
             @RequestPart(name = "file") MultipartFile file,
             @ApiParam("Name of whitepapper")
@@ -76,9 +76,9 @@ public class WhitepapperController {
         return ResponseEntity.ok(FileUploadDto.builder().id(id).build());
     }
 
-    @ApiOperation(value = "Get all whitepappers [e.g, for displaying in screen, in table view]")
+    @ApiOperation(value = "Get all the whitepappers [e.g, for displaying in screen, in table view]")
     @GetMapping()
-    public Page<ScreenDocumentDto> getAllWhitepappersForScreen(
+    public Page<ScreenDto> getAllWhitepappersForScreen(
             @ApiParam("Size of page starting from 0") @RequestParam(value = "page") final Integer page,
             @ApiParam("Page size") @RequestParam(value = "size") final Integer size) {
         Page<Whitepapper> data = whitepapperService.findAllWhitepappers(page, size);
@@ -88,24 +88,24 @@ public class WhitepapperController {
 
     @ApiOperation(value = "Get whitepapper by identifier [e.g, for displaying in edit view]")
     @GetMapping("/get-whitepapper")
-    public ResponseEntity<ScreenDocumentDto> getMetadata(
+    public ResponseEntity<ScreenDto> getWhitepapperForScreenById(
             @ApiParam("Whitepapper identifier") @RequestParam("id") Long id) {
         Whitepapper whitepapper = whitepapperService.getById(id);
-        ScreenDocumentDto screenDocumentDto = screenDocumentMapper.toDto(whitepapper);
+        ScreenDto screenDocumentDto = screenDocumentMapper.toDto(whitepapper);
         return ResponseEntity.ok(screenDocumentDto);
     }
 
     @ApiOperation(value = "Update whitepapper's metadata by identifier [e.g, data is submited from edit view]")
     @PutMapping("/update-metadata")
-    public ResponseEntity<Long> updateMetadata(
+    public ResponseEntity<Long> updateWhitepapperMetadataById(
             @ApiParam("Identifier of the whitepapper") @RequestParam("id") Long id,
             @ApiParam("Updated metadata") @RequestBody WhitepapperMetadataDto dto) {
         return ResponseEntity.ok(whitepapperMetadataService.save(whitepapperMapper.toEntity(dto), id).getId());
     }
 
     @PostMapping()
-    @ApiOperation(value = "Deleting white pappers by dentifiers")
-    public void deleteByIds(@ApiParam("list of white pappers") @RequestBody IdsDto idsDto) {
+    @ApiOperation(value = "Deleting whitepappers by dentifiers")
+    public void deleteWhitepappersByIds(@ApiParam("list of whitepappers") @RequestBody IdsDto idsDto) {
         whitepapperService.deleteByIds(idsDto.getIds());
     }
 }

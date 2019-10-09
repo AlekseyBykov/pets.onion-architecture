@@ -23,7 +23,7 @@ import static java.util.Objects.isNull;
  */
 @Component
 @RequiredArgsConstructor
-public class WhitepapperMetadataValidator extends Validator<WhitepapperMetadata> {
+public class WhitepapperMetadataValidator extends AbstractValidator<WhitepapperMetadata> {
 
     private final WhitepapperMetadataRegistry whitepapperMetadataRegistry;
 

@@ -3,6 +3,8 @@
 //
 package alekseybykov.portfolio.component.services.validator;
 
+import alekseybykov.portfolio.component.exceptions.ValidationException;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -11,7 +13,7 @@ import java.util.Collection;
  * @version 1.0
  * @since   2019-10-03
  */
-public abstract class Validator<T> {
+public abstract class AbstractValidator<T> {
 
     protected abstract void validate(T entity, Action action, Collection<String> errors);
 

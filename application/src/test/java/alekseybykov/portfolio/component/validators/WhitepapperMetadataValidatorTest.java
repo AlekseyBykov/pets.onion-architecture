@@ -5,9 +5,9 @@ package alekseybykov.portfolio.component.validators;
 
 import alekseybykov.portfolio.component.entities.Whitepapper;
 import alekseybykov.portfolio.component.entities.WhitepapperMetadata;
+import alekseybykov.portfolio.component.exceptions.ValidationException;
 import alekseybykov.portfolio.component.registries.WhitepapperMetadataRegistry;
 import alekseybykov.portfolio.component.services.validator.Action;
-import alekseybykov.portfolio.component.services.validator.ValidationException;
 import alekseybykov.portfolio.component.services.validator.WhitepapperMetadataValidator;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;

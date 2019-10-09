@@ -20,7 +20,7 @@ import java.time.format.ResolverStyle;
  * @since   2019-10-04
  */
 @Configuration
-public class JacksonConfiguration {
+public class JacksonConfig {
     @Bean
     @Primary
     public ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder) {

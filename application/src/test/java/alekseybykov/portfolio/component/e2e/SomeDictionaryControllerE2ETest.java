@@ -3,6 +3,7 @@
 //
 package alekseybykov.portfolio.component.e2e;
 
+import alekseybykov.portfolio.component.e2e.base.IntegrationTestsBaseClass;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
