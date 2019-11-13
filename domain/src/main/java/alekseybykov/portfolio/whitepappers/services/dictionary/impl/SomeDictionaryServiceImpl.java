@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.services.dictionary.impl;
 
 import alekseybykov.portfolio.whitepappers.entities.SomeDictionary;
@@ -15,11 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-05
- */
 @Service
 @RequiredArgsConstructor
 public class SomeDictionaryServiceImpl implements SomeDictionaryService {

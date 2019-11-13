@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.validators;
 
 import alekseybykov.portfolio.whitepappers.entities.Whitepapper;
@@ -22,11 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @DisplayName("Tests for metadata validation")
 class WhitepapperMetadataValidatorTest {
 

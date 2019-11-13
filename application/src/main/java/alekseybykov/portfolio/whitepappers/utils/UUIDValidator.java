@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.utils;
 
 import lombok.AccessLevel;
@@ -14,11 +11,6 @@ import java.util.regex.Pattern;
 
 import static java.util.Objects.nonNull;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class UUIDValidator {
 

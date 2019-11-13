@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.services.metadata.impl;
 
 import alekseybykov.portfolio.whitepappers.entities.Whitepapper;
@@ -14,11 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Service
 @RequiredArgsConstructor
 public class WhitepapperMetadataServiceImpl implements WhitepapperMetadataService {

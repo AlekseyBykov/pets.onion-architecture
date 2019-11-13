@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.config.minio;
 
 import io.minio.MinioClient;
@@ -10,11 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-04
- */
 @Configuration
 public class MinioConfig {
 

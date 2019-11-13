@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.controllers;
 
 import alekseybykov.portfolio.whitepappers.dto.SomeDictionaryDto;
@@ -15,11 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-05
- */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/some-dictionary")

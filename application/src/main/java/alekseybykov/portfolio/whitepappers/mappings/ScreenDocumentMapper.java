@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.mappings;
 
 import alekseybykov.portfolio.whitepappers.dto.ScreenDto;
@@ -14,11 +11,6 @@ import org.mapstruct.Named;
 
 import static java.util.Objects.nonNull;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ScreenDocumentMapper extends BaseMapper<Whitepapper, ScreenDto> {
 

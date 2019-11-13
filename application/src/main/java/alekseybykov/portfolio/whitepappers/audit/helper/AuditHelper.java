@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.audit.helper;
 
 import alekseybykov.portfolio.whitepappers.entities.Audit;
@@ -14,11 +11,6 @@ import java.util.Arrays;
 
 import static java.time.ZonedDateTime.now;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-02
- */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AuditHelper {
 

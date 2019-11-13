@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.dto;
 
 import io.swagger.annotations.ApiModel;
@@ -12,11 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.entities;
 
 import lombok.AllArgsConstructor;
@@ -11,11 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.ZonedDateTime;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-08
- */
 @Data
 @Builder
 @NoArgsConstructor

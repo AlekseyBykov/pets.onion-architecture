@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.config.serialization;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,11 +11,6 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import java.time.format.DateTimeFormatter;
 import java.time.format.ResolverStyle;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-04
- */
 @Configuration
 public class JacksonConfig {
     @Bean

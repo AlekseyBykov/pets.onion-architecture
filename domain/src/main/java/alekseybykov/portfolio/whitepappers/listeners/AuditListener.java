@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.listeners;
 
 import alekseybykov.portfolio.whitepappers.audit.AuditManager;
@@ -11,11 +8,6 @@ import org.springframework.stereotype.Component;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-23
- */
 @Component
 public class AuditListener {
 

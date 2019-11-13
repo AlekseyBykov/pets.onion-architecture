@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.e2e.audit;
 
 import alekseybykov.portfolio.whitepappers.audit.helper.AuditHelper;
@@ -20,11 +17,6 @@ import java.time.ZonedDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-24
- */
 @AutoConfigureTestDatabase(replace = NONE)
 @DisplayName("Test for JPA events listener")
 class AuditE2ETest extends IntegrationTestsBaseClass {

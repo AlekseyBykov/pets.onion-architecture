@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.services.whitepapper;
 
 import alekseybykov.portfolio.whitepappers.entities.FileTransferObject;
@@ -12,11 +9,6 @@ import org.springframework.data.domain.Page;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-08
- */
 public interface WhitepapperService {
 
     Long upload(@NonNull FileTransferObject fileTransferObject,

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.entities;
 
 import lombok.AllArgsConstructor;
@@ -10,11 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.InputStream;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Data
 @Builder
 @NoArgsConstructor

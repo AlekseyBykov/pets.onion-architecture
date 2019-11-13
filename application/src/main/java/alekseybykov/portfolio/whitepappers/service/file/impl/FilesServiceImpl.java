@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.service.file.impl;
 
 import alekseybykov.portfolio.whitepappers.entities.FileMetadata;
@@ -33,11 +30,6 @@ import java.util.UUID;
 import static alekseybykov.portfolio.whitepappers.entities.FileMetadata.Storage.LOCAL;
 import static alekseybykov.portfolio.whitepappers.entities.FileMetadata.Storage.MINIO;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Slf4j
 @Service
 @RequiredArgsConstructor

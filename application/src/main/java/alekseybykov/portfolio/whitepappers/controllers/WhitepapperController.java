@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.controllers;
 
 import alekseybykov.portfolio.whitepappers.dto.*;
@@ -25,11 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-08-25
- */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/white-pappers")

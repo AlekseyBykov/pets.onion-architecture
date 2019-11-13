@@ -1,17 +1,9 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.audit;
 
 import alekseybykov.portfolio.whitepappers.entities.User;
 
 import java.io.Serializable;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-02
- */
 public interface Auditor {
 
     void embedAuditBeforeCreating(Object entity,

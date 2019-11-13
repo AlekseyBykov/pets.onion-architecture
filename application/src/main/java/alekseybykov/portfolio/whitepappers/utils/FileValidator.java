@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.utils;
 
 import alekseybykov.portfolio.whitepappers.exceptions.WorkWithFilesException;
@@ -10,11 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import static java.util.Objects.nonNull;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Component
 public class FileValidator {
 

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.audit.impl;
 
 import alekseybykov.portfolio.whitepappers.audit.AuditManager;
@@ -22,10 +19,6 @@ import static java.util.Objects.nonNull;
 
 /**
  * Currently disabled. See solution based on Hibernate interceptor.
- *
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-24
  */
 @RequiredArgsConstructor
 public class AuditChanger implements AuditManager {

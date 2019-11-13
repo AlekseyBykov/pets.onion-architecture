@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.config.database;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -16,11 +13,6 @@ import javax.sql.DataSource;
 
 import static java.util.Objects.isNull;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-08-09
- */
 @Configuration
 @EnableJpaRepositories(basePackages = {"alekseybykov.portfolio.whitepappers.repositories"})
 @EnableTransactionManagement

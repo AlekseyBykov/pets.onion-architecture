@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.repositories;
 
 import alekseybykov.portfolio.whitepappers.entities.Whitepapper;
@@ -16,11 +13,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.Optional;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-08
- */
 @Repository
 public interface WhitepapperRepository extends WhitepapperRegistry, JpaRepository<Whitepapper, Long> {
 

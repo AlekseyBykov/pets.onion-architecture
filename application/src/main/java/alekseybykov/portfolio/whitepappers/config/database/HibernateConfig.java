@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.config.database;
 
 import alekseybykov.portfolio.whitepappers.audit.AuditInterceptor;
@@ -10,11 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-04
- */
 @Component
 @RequiredArgsConstructor
 public class HibernateConfig implements HibernatePropertiesCustomizer {

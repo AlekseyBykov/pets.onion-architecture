@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.services.whitepapper.impl;
 
 import alekseybykov.portfolio.whitepappers.entities.Audit;
@@ -26,11 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.InputStream;
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-08
- */
 @Service
 @RequiredArgsConstructor
 public class WhitepapperServiceImpl implements WhitepapperService {

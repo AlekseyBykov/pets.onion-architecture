@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.audit.impl;
 
 import alekseybykov.portfolio.whitepappers.audit.Auditor;
@@ -20,11 +17,6 @@ import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 import static java.util.Optional.ofNullable;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-02
- */
 @Component
 @ConditionalOnProperty(name = "audit.enabled", havingValue = "true", matchIfMissing = true)
 public class AuditIntegrator implements Auditor {

@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.e2e;
 
 import alekseybykov.portfolio.whitepappers.e2e.base.IntegrationTestsBaseClass;
@@ -15,11 +12,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-05
- */
 @DisplayName("Tests for dictionary controller")
 class SomeDictionaryControllerE2ETest extends IntegrationTestsBaseClass {
 

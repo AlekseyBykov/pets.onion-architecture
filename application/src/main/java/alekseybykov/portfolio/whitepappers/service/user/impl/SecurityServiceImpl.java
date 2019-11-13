@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.service.user.impl;
 
 import alekseybykov.portfolio.whitepappers.entities.User;
@@ -14,11 +11,6 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Objects.isNull;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-10-03
- */
 @Service
 @RequiredArgsConstructor
 public class SecurityServiceImpl implements SecurityService {

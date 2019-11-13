@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.whitepappers.dto;
 
 import io.swagger.annotations.ApiModel;
@@ -9,11 +6,6 @@ import lombok.*;
 
 import java.util.List;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 1.0
- * @since   2019-09-08
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
