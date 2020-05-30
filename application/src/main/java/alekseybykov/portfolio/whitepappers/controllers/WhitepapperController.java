@@ -22,6 +22,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/white-pappers")

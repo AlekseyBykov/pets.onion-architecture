@@ -12,6 +12,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author Aleksey Bykov
+ * @since 05.10.2019
+ */
 @DisplayName("Tests for dictionary controller")
 class SomeDictionaryControllerE2ETest extends IntegrationTestsBaseClass {
 

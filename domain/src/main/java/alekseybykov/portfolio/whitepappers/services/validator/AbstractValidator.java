@@ -5,6 +5,10 @@ import alekseybykov.portfolio.whitepappers.exceptions.ValidationException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 public abstract class AbstractValidator<T> {
 
     protected abstract void validate(T entity, Action action, Collection<String> errors);

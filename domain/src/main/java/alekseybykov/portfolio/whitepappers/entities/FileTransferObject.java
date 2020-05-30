@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.io.InputStream;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Data
 @Builder
 @NoArgsConstructor

@@ -17,6 +17,10 @@ import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 import static java.util.Optional.ofNullable;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Component
 @ConditionalOnProperty(name = "audit.enabled", havingValue = "true", matchIfMissing = true)
 public class AuditIntegrator implements Auditor {

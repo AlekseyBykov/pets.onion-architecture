@@ -4,6 +4,10 @@ import alekseybykov.portfolio.whitepappers.entities.User;
 
 import java.io.Serializable;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 public interface Auditor {
 
     void embedAuditBeforeCreating(Object entity,

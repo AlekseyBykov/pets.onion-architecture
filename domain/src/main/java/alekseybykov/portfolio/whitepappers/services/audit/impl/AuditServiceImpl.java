@@ -6,6 +6,10 @@ import alekseybykov.portfolio.whitepappers.services.audit.AuditService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class AuditServiceImpl implements AuditService {

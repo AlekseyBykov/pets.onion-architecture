@@ -19,6 +19,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @DisplayName("Tests for metadata validation")
 class WhitepapperMetadataValidatorTest {
 

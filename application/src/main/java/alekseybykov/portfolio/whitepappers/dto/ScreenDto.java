@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

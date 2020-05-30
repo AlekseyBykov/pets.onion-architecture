@@ -6,6 +6,10 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

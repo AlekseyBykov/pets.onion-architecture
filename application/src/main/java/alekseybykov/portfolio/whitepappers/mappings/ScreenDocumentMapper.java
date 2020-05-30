@@ -11,6 +11,10 @@ import org.mapstruct.Named;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ScreenDocumentMapper extends BaseMapper<Whitepapper, ScreenDto> {
 

@@ -13,6 +13,10 @@ import javax.sql.DataSource;
 
 import static java.util.Objects.isNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Configuration
 @EnableJpaRepositories(basePackages = {"alekseybykov.portfolio.whitepappers.repositories"})
 @EnableTransactionManagement

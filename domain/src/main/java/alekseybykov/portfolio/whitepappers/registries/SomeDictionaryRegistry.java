@@ -6,6 +6,10 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 05.10.2019
+ */
 public interface SomeDictionaryRegistry {
 
     List<SomeDictionary> findAll(Sort sort);

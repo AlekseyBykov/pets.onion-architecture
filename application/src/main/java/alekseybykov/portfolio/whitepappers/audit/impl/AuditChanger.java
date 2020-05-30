@@ -19,6 +19,9 @@ import static java.util.Objects.nonNull;
 
 /**
  * Currently disabled. See solution based on Hibernate interceptor.
+ *
+ * @author Aleksey Bykov
+ * @since 24.09.2019
  */
 @RequiredArgsConstructor
 public class AuditChanger implements AuditManager {

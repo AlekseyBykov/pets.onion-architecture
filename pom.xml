@@ -36,6 +36,13 @@
     <description>An example of Spring Boot monolith application with using Onion Architecture. Includes backend only.</description>
     <url>https://alekseybykov.github.io</url>
 
+    <developers>
+        <developer>
+            <name>Aleksey Bykov</name>
+            <email>aleksey.n.bykov@gmail.com</email>
+        </developer>
+    </developers>
+
     <modules>
         <module>application</module>
         <module>domain</module>

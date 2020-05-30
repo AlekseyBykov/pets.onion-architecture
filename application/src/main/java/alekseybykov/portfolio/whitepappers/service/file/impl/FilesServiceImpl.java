@@ -30,6 +30,10 @@ import java.util.UUID;
 import static alekseybykov.portfolio.whitepappers.entities.FileMetadata.Storage.LOCAL;
 import static alekseybykov.portfolio.whitepappers.entities.FileMetadata.Storage.MINIO;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

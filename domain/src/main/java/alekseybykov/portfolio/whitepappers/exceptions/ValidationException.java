@@ -3,6 +3,10 @@ package alekseybykov.portfolio.whitepappers.exceptions;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 public class ValidationException extends RuntimeException {
     private final Collection<String> errors;
     private final String validator;

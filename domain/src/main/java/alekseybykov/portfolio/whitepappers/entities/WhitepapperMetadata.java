@@ -5,6 +5,10 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Entity
 @Data
 @Builder

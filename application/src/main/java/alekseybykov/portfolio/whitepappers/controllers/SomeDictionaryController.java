@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 05.10.2019
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/some-dictionary")

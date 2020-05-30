@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author Aleksey Bykov
+ * @since 04.10.2019
+ */
 @Configuration
 public class MinioConfig {
 

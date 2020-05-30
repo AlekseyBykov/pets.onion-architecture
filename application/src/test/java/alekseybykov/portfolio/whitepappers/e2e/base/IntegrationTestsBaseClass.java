@@ -10,6 +10,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @SpringBootTest()
 @AutoConfigureMockMvc
 @ActiveProfiles(profiles = "e2e")

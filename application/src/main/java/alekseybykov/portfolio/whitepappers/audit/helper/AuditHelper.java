@@ -11,6 +11,10 @@ import java.util.Arrays;
 
 import static java.time.ZonedDateTime.now;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class AuditHelper {
 

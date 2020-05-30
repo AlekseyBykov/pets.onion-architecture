@@ -10,6 +10,10 @@ import javax.persistence.Query;
 
 import static java.lang.String.format;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @Repository
 @RequiredArgsConstructor
 public class AuditCustomRepository implements AuditRegistry {

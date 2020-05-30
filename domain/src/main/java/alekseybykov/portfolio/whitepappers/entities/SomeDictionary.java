@@ -10,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Entity
 @Data
 @Builder

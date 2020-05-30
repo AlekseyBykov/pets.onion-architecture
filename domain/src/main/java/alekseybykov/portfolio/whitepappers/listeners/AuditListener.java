@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @Component
 public class AuditListener {
 

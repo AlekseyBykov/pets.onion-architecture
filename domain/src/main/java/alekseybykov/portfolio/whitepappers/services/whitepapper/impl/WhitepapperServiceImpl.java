@@ -23,6 +23,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class WhitepapperServiceImpl implements WhitepapperService {

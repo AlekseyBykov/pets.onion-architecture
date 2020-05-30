@@ -9,6 +9,10 @@ import org.springframework.data.domain.Page;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 public interface WhitepapperService {
 
     Long upload(@NonNull FileTransferObject fileTransferObject,

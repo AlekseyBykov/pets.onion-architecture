@@ -11,6 +11,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class WhitepapperMetadataServiceImpl implements WhitepapperMetadataService {

@@ -8,6 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 05.10.2019
+ */
 public interface SomeDictionaryRepository extends SomeDictionaryRegistry, JpaRepository<SomeDictionary, Long> {
 
     @Override

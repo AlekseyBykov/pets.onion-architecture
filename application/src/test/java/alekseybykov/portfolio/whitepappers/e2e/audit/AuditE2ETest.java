@@ -17,6 +17,10 @@ import java.time.ZonedDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @AutoConfigureTestDatabase(replace = NONE)
 @DisplayName("Test for JPA events listener")
 class AuditE2ETest extends IntegrationTestsBaseClass {

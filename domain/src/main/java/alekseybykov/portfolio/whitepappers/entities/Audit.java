@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.ZonedDateTime;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Data
 @Builder
 @NoArgsConstructor

@@ -13,6 +13,10 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 @Repository
 public interface WhitepapperRepository extends WhitepapperRegistry, JpaRepository<Whitepapper, Long> {
 

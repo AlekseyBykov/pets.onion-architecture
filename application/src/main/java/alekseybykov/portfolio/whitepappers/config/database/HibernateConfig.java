@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+/**
+ * @author Aleksey Bykov
+ * @since 04.10.2019
+ */
 @Component
 @RequiredArgsConstructor
 public class HibernateConfig implements HibernatePropertiesCustomizer {

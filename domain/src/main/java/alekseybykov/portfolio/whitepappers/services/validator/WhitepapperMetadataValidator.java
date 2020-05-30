@@ -13,6 +13,10 @@ import java.util.Collection;
 
 import static java.util.Objects.isNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Component
 @RequiredArgsConstructor
 public class WhitepapperMetadataValidator extends AbstractValidator<WhitepapperMetadata> {

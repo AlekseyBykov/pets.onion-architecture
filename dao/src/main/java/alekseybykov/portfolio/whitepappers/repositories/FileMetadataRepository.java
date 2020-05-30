@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 06.10.2019
+ */
 @Repository
 public interface FileMetadataRepository extends FileMetadataRegistry, JpaRepository<FileMetadata, Long> {
 

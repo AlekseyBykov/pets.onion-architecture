@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Builder
 @Data
 @NoArgsConstructor

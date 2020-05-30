@@ -11,6 +11,10 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Objects.isNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class SecurityServiceImpl implements SecurityService {

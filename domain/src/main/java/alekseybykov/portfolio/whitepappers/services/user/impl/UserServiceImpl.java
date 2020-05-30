@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {

@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Repository
 public interface WhitepapperMetadataRepository extends WhitepapperMetadataRegistry, JpaRepository<WhitepapperMetadata, Long> {
     @Query(value = "select wm " +

@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class UUIDValidator {
 

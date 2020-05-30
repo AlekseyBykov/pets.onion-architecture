@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Component
 public class AuditInterceptor  extends EmptyInterceptor {
 

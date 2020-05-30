@@ -4,6 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Entity
 @Data
 @Builder

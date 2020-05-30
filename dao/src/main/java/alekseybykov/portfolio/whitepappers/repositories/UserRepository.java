@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 24.09.2019
+ */
 @Repository
 public interface UserRepository extends UserRegistry, JpaRepository<User, Long> {
     @Query(value =

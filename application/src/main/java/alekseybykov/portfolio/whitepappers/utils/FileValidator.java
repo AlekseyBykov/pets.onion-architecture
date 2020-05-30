@@ -7,6 +7,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * @author Aleksey Bykov
+ * @since 03.10.2019
+ */
 @Component
 public class FileValidator {
 

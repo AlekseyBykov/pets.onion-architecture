@@ -24,6 +24,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author Aleksey Bykov
+ * @since 04.10.2019
+ */
 @DisplayName("Tests for whitepappers controller")
 class WhitepapperControllerE2ETest extends IntegrationTestsBaseClass {
 

@@ -12,6 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Aleksey Bykov
+ * @since 05.10.2019
+ */
 @Service
 @RequiredArgsConstructor
 public class SomeDictionaryServiceImpl implements SomeDictionaryService {

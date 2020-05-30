@@ -11,6 +11,10 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import java.time.format.DateTimeFormatter;
 import java.time.format.ResolverStyle;
 
+/**
+ * @author Aleksey Bykov
+ * @since 04.10.2019
+ */
 @Configuration
 public class JacksonConfig {
     @Bean

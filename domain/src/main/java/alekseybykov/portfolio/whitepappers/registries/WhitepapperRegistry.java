@@ -7,6 +7,10 @@ import org.springframework.data.domain.Pageable;
 import java.util.Collection;
 import java.util.Optional;
 
+/**
+ * @author Aleksey Bykov
+ * @since 08.09.2019
+ */
 public interface WhitepapperRegistry {
 
     Whitepapper save(Whitepapper whitepapper);

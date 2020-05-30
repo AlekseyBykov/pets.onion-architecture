@@ -5,6 +5,10 @@ import org.hibernate.boot.spi.MetadataBuilderContributor;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
 import org.hibernate.type.ZonedDateTimeType;
 
+/**
+ * @author Aleksey Bykov
+ * @since 04.10.2019
+ */
 public class SqlFunctionsMetadataBuilderContributor implements MetadataBuilderContributor {
     @Override
     public void contribute(MetadataBuilder metadataBuilder) {
